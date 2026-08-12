@@ -429,55 +429,54 @@
             downloadPreview.classList.add('hidden');
 
             // RapidAPI Endpoint setup
-            const apiUrl = `https://instagram-reels-downloader-api.p.rapidapi.com/download?url=${encodeURIComponent(userUrl)}`;
-            const options = {
-                method: 'GET',
-                headers: {
-                    'x-rapidapi-key': '1d89e71444msh624729793e0fd8bp1e285fjsn555b1c989d1e',
-                    'x-rapidapi-host': 'instagram-reels-downloader-api.p.rapidapi.com',
-                    'Content-Type': 'application/json'
-                }
-            };
+        const apiUrl = `https://instagram-reels-downloader-api.p.rapidapi.com/download?url=${encodeURIComponent(userUrl)}`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': '1d89e71444msh624729793e0fd8bp1e285fjsn555b1c989d1e',
+                'x-rapidapi-host': 'instagram-reels-downloader-api.p.rapidapi.com'
+            }
+        };
 
-            try {
-                const response = await fetch(apiUrl, options);
-                const data = await response.json();
+        try {
+            const response = await fetch(apiUrl, options);
+            const data = await response.json();
 
-                // Direct Video Link Extracting
-                const videoUrl = data.data?.videoUrl || data.data?.downloadUrl || data.download_url || data.url;
+            // Multi-format Video Link Extraction (Fixes 'URL not found')
+            let videoUrl = null;
+            if (typeof data === 'string' && data.startsWith('http')) {
+                videoUrl = data;
+            } else if (data) {
+                videoUrl = data.videoUrl || data.downloadUrl || data.download_url || data.url || 
+                           (data.data && (data.data.videoUrl || data.data.url || (Array.isArray(data.data) && data.data[0]?.url)));
+            }
 
-                if (videoUrl) {
-                    loadingState.classList.add('hidden');
-                    downloadPreview.classList.remove('hidden');
-                    
-                    const finalDownloadBtn = document.getElementById('finalDownloadBtn');
-                    if (finalDownloadBtn) {
-                        finalDownloadBtn.href = videoUrl;
-                    }
+            if (videoUrl) {
+                loadingState.classList.add('hidden');
+                downloadPreview.classList.remove('hidden');
 
-                    // Direct MP4 file open/download trigger as requested
-                    const a = document.createElement('a');
-                    a.href = videoUrl;
-                    a.target = '_blank';
-                    a.download = 'instagram_video.mp4';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
+                const finalBtn = document.getElementById('finalDownloadBtn');
+                if (finalBtn) {
+                    finalBtn.href = videoUrl;
+                    finalBtn.setAttribute('target', '_blank');
+                    finalBtn.setAttribute('download', 'instagram_video.mp4');
                 } else {
-                    loadingState.classList.add('hidden');
-                    resultArea.classList.add('hidden');
-                    alert("Video URL not found. Please check if the account is public.");
+                    window.open(videoUrl, '_blank');
                 }
-            } catch (error) {
-                console.error(error);
+            } else {
+                alert("Video link process nahi ho paya. Kripya check karein ki link Public Reel/Post ka hai ya nahi!");
                 loadingState.classList.add('hidden');
                 resultArea.classList.add('hidden');
-                alert("Error fetching data, please try again later!");
-            } finally {
-                if(downloadBtn) {
-                    downloadBtn.innerHTML = originalBtnText;
-                    downloadBtn.disabled = false;
-                }
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Fetch Error! Network issue ya API limit reached.");
+            loadingState.classList.add('hidden');
+            resultArea.classList.add('hidden');
+        } finally {
+            if (downloadBtn) {
+                downloadBtn.innerHTML = originalBtnText;
+                downloadBtn.disabled = false;
             }
         }
     </script>
