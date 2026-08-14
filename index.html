@@ -314,7 +314,7 @@
             document.getElementById('legalModal').classList.add('hidden');
         }
 
-        // Downloader Logic with All-In-One API
+        // Downloader Logic with Universal Smart Extractor
         async function handleDownload() {
             const inputVal = document.getElementById('mediaUrl').value.trim();
             const resultArea = document.getElementById('resultArea');
@@ -335,22 +335,37 @@
                 method: 'GET',
                 headers: {
                     'x-rapidapi-key': '1d89e71444msh624729793e0fd8bp1e285fjsn555b1c989d1e',
-                    'x-rapidapi-host': 'instagram-post-reels-stories-downloader-api.p.rapidapi.com',
-                    'Content-Type': 'application/json'
+                    'x-rapidapi-host': 'instagram-post-reels-stories-downloader-api.p.rapidapi.com'
                 }
             };
+
+            // Deep Search Helper to extract any video/image link from API response
+            function findMediaUrl(obj) {
+                if (!obj) return null;
+                if (typeof obj === 'string' && obj.startsWith('http') && (obj.includes('.mp4') || obj.includes('cdn') || obj.includes('instagram') || obj.includes('fbcdn'))) {
+                    return obj;
+                }
+                if (typeof obj === 'object') {
+                    for (let key in obj) {
+                        if (['url', 'download_url', 'video_url', 'media', 'thumb', 'video', 'link'].includes(key.toLowerCase()) && typeof obj[key] === 'string' && obj[key].startsWith('http')) {
+                            return obj[key];
+                        }
+                        const found = findMediaUrl(obj[key]);
+                        if (found) return found;
+                    }
+                }
+                return null;
+            }
 
             try {
                 const response = await fetch(apiUrl, options);
                 const data = await response.json();
+                console.log("RapidAPI Raw Response:", data);
 
-                // Multi-structure handling for Reels, Posts, Photos, Carousels
-                let downloadUrl = null;
-                if (typeof data === 'string' && data.startsWith('http')) {
+                let downloadUrl = findMediaUrl(data);
+
+                if (!downloadUrl && typeof data === 'string' && data.startsWith('http')) {
                     downloadUrl = data;
-                } else if (data) {
-                    downloadUrl = data.url || data.video_url || data.download_url || data.media || data.result?.url || 
-                                  (data.data && (data.data.url || data.data.video_url || (Array.isArray(data.data) && (data.data[0]?.url || data.data[0]?.video_url))));
                 }
 
                 if (downloadUrl) {
@@ -368,11 +383,11 @@
                 }
             } catch (error) {
                 console.error(error);
-                alert("API Processing Error! Check link ya internet connection.");
+                alert("API Processing Error! Check internet connection ya thodi der baad try karein.");
                 loadingState.classList.add('hidden');
                 resultArea.classList.add('hidden');
             }
         }
-    </script>
+</script>
 </body>
 </html>
