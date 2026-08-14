@@ -286,22 +286,36 @@
 
     <!-- Core Script -->
     <script>
+        let currentTab = 'reels';
+
         // Tab Switcher
         function switchTab(element, type) {
+            currentTab = type;
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('tab-active');
                 btn.classList.add('text-slate-400');
             });
             element.classList.add('tab-active');
             element.classList.remove('text-slate-400');
+
+            const inputField = document.getElementById('mediaUrl');
+            if (type === 'profile') {
+                inputField.placeholder = "Enter Instagram username or profile link (e.g. virat.kohli or https://instagram.com/...)";
+            } else if (type === 'story') {
+                inputField.placeholder = "Paste Instagram Story link here...";
+            } else if (type === 'photo') {
+                inputField.placeholder = "Paste Instagram Photo / Post link here...";
+            } else {
+                inputField.placeholder = "Paste Instagram link here (e.g., https://www.instagram.com/reel/...)";
+            }
         }
 
         // Modal Functionality
         const modalData = {
-            privacy: { title: "Privacy Policy", text: "FastVideoSaver.online values user anonymity. We do not require account logins, nor do we store downloaded media files or search queries on our servers." },
-            terms: { title: "Terms of Service", text: "FastVideoSaver is provided for individual personal archival use. Users are strictly responsible for abiding by copyright laws when saving public creator content." },
+            privacy: { title: "Privacy Policy", text: "FastVideoSaver.online values user anonymity. We do not store downloaded media files or search queries on our servers." },
+            terms: { title: "Terms of Service", text: "FastVideoSaver is provided for individual personal archival use. Users are strictly responsible for abiding by copyright laws." },
             contact: { title: "Contact Us", text: "For support, bug reporting, or inquiries, reach out to our team at: support@fastvideosaver.online" },
-            dmca: { title: "DMCA Disclaimer", text: "FastVideoSaver.online is not affiliated with or endorsed by Instagram or Meta. Content is fetched live via public CDN endpoints without storing copyrighted media." }
+            dmca: { title: "DMCA Disclaimer", text: "FastVideoSaver.online is not affiliated with Instagram or Meta. Content is fetched live via public CDN endpoints without storing media." }
         };
 
         function openModal(key) {
@@ -314,21 +328,57 @@
             document.getElementById('legalModal').classList.add('hidden');
         }
 
-        // Downloader Logic with Universal Smart Extractor
+        // Force Auto Download to Gallery/Device
+        async function forceDownloadFile(mediaUrl, filename) {
+            try {
+                const res = await fetch(mediaUrl);
+                const blob = await res.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+                const tempAnchor = document.createElement('a');
+                tempAnchor.style.display = 'none';
+                tempAnchor.href = blobUrl;
+                tempAnchor.download = filename;
+                document.body.appendChild(tempAnchor);
+                tempAnchor.click();
+                setTimeout(() => {
+                    document.body.removeChild(tempAnchor);
+                    window.URL.revokeObjectURL(blobUrl);
+                }, 2000);
+            } catch (err) {
+                // Fallback if CORS restricts direct blob download
+                const tempAnchor = document.createElement('a');
+                tempAnchor.href = mediaUrl;
+                tempAnchor.setAttribute('download', filename);
+                tempAnchor.setAttribute('target', '_blank');
+                document.body.appendChild(tempAnchor);
+                tempAnchor.click();
+                document.body.removeChild(tempAnchor);
+            }
+        }
+
+        // Downloader Logic
         async function handleDownload() {
-            const inputVal = document.getElementById('mediaUrl').value.trim();
+            let inputVal = document.getElementById('mediaUrl').value.trim();
             const resultArea = document.getElementById('resultArea');
             const loadingState = document.getElementById('loadingState');
             const downloadPreview = document.getElementById('downloadPreview');
+            const triggerBtn = document.getElementById('downloadTriggerBtn');
 
             if (!inputVal) {
-                alert("Pehle Instagram URL paste karo!");
+                alert("Pehle Instagram Link ya Username daalo!");
                 return;
+            }
+
+            // Auto-format profile usernames into valid Instagram links
+            if (currentTab === 'profile' && !inputVal.startsWith('http')) {
+                inputVal = inputVal.replace('@', '');
+                inputVal = `https://www.instagram.com/${inputVal}/`;
             }
 
             resultArea.classList.remove('hidden');
             loadingState.classList.remove('hidden');
             downloadPreview.classList.add('hidden');
+            triggerBtn.disabled = true;
 
             const apiUrl = `https://instagram-post-reels-stories-downloader-api.p.rapidapi.com/instagram/?url=${encodeURIComponent(inputVal)}`;
             const options = {
@@ -339,15 +389,16 @@
                 }
             };
 
-            // Deep Search Helper to extract any video/image link from API response
+            // Comprehensive scanner for Video, Photo, Carousel, DP and Story URLs
             function findMediaUrl(obj) {
                 if (!obj) return null;
-                if (typeof obj === 'string' && obj.startsWith('http') && (obj.includes('.mp4') || obj.includes('cdn') || obj.includes('instagram') || obj.includes('fbcdn'))) {
+                if (typeof obj === 'string' && obj.startsWith('http') && (obj.includes('.mp4') || obj.includes('.jpg') || obj.includes('.jpeg') || obj.includes('.webp') || obj.includes('cdn') || obj.includes('instagram') || obj.includes('fbcdn'))) {
                     return obj;
                 }
                 if (typeof obj === 'object') {
                     for (let key in obj) {
-                        if (['url', 'download_url', 'video_url', 'media', 'thumb', 'video', 'link'].includes(key.toLowerCase()) && typeof obj[key] === 'string' && obj[key].startsWith('http')) {
+                        const k = key.toLowerCase();
+                        if (['url', 'download_url', 'video_url', 'media', 'thumb', 'thumbnail', 'display_url', 'image_url', 'profile_pic_url_hd', 'profile_pic_url', 'link'].includes(k) && typeof obj[key] === 'string' && obj[key].startsWith('http')) {
                             return obj[key];
                         }
                         const found = findMediaUrl(obj[key]);
@@ -360,10 +411,9 @@
             try {
                 const response = await fetch(apiUrl, options);
                 const data = await response.json();
-                console.log("RapidAPI Raw Response:", data);
+                console.log("RapidAPI Response:", data);
 
                 let downloadUrl = findMediaUrl(data);
-
                 if (!downloadUrl && typeof data === 'string' && data.startsWith('http')) {
                     downloadUrl = data;
                 }
@@ -372,20 +422,31 @@
                     loadingState.classList.add('hidden');
                     downloadPreview.classList.remove('hidden');
 
+                    const isImage = downloadUrl.includes('.jpg') || downloadUrl.includes('.jpeg') || downloadUrl.includes('.webp') || currentTab === 'photo' || currentTab === 'profile';
+                    const fileExtension = isImage ? 'jpg' : 'mp4';
+                    const fileName = `fastvideosaver_${currentTab}_${Date.now()}.${fileExtension}`;
+
+                    // Set Manual Button Click
                     const finalBtn = document.getElementById('finalDownloadBtn');
-                    finalBtn.href = downloadUrl;
-                    finalBtn.setAttribute('target', '_blank');
-                    finalBtn.setAttribute('download', 'instagram_media.mp4');
+                    finalBtn.onclick = function(e) {
+                        e.preventDefault();
+                        forceDownloadFile(downloadUrl, fileName);
+                    };
+
+                    // Trigger Automatic Download Immediately
+                    forceDownloadFile(downloadUrl, fileName);
                 } else {
-                    alert("Media URL extract nahi ho paya. Make sure account public hai!");
+                    alert("Media link fetch nahi hua. Kripya check karein ki account/post PUBLIC hai ya link sahi hai!");
                     loadingState.classList.add('hidden');
                     resultArea.classList.add('hidden');
                 }
             } catch (error) {
                 console.error(error);
-                alert("API Processing Error! Check internet connection ya thodi der baad try karein.");
+                alert("API fetch error! Check connection ya link dubara verify karo.");
                 loadingState.classList.add('hidden');
                 resultArea.classList.add('hidden');
+            } finally {
+                triggerBtn.disabled = false;
             }
         }
 </script>
