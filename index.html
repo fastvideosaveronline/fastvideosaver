@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="metaTitle">FastFinance & Multi-Tool Suite — 30+ High-Precision Universal Calculators</title>
-    <meta id="metaDesc" name="description" content="Universal client-side computational suite. High-precision utilities for Mortgages, Auto Loans, Sleep REM Cycles, Fuel Trip Costs, TDEE, Hydration, and Final Exam Targets.">
+    <meta id="metaDesc" name="description" content="Universal client-side computational suite. High-precision utilities for Mortgages, Auto Loans, Sleep REM Cycles, Daily Water Intake, TDEE, Hydration, and Final Exam Targets.">
     <link rel="canonical" href="https://www.fastvideosaver.online/">
 
     <!-- Dynamic Browser Tab SVG Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%238b5cf6'/><path d='M25 50 L42 67 L75 30' stroke='white' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+    <!-- Structured Data (JSON-LD Schema for Google Rich Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "FastFinanceSuite Universal Calculator",
+      "url": "https://www.fastvideosaver.online/",
+      "description": "High-precision client-side calculators for mortgages, 90-minute REM sleep cycles, hydration water targets, and GPA grades.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 
     <!-- PWA Configuration -->
     <link rel="manifest" href="/manifest.json">
@@ -101,10 +119,10 @@
                 </div>
                 
                 <h1 id="activeToolHeading" class="text-3xl sm:text-5xl font-black tracking-tight mb-3 leading-tight">
-                    Mortgage & Loan <span class="gradient-text">Calculator</span>
+                    Mortgage & Amortization <span class="gradient-text">Calculator</span>
                 </h1>
                 <p id="activeToolDesc" class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto mb-8 leading-relaxed">
-                    Calculate monthly payments, total interest, and full year-by-year amortization schedules for fixed loans.
+                    Estimate monthly mortgage payments (P&I), property taxes, and complete year-by-year amortization payoff schedules.
                 </p>
 
                 <!-- Core Dynamic Calculator Card -->
@@ -141,7 +159,7 @@
                         <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 space-y-4">
                             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                                 <div>
-                                    <span id="resSubtitle" class="text-xs font-bold text-purple-400 uppercase tracking-wider">Calculation Result</span>
+                                    <span id="resSubtitle" class="text-xs font-bold text-purple-400 uppercase tracking-wider">Estimated Total Monthly Payment</span>
                                     <h3 id="resPrimaryValue" class="text-3xl font-black text-white my-1">$0.00</h3>
                                     <p id="resBreakdown" class="text-xs text-slate-400">Adjust parameters above to view breakdown.</p>
                                 </div>
@@ -296,24 +314,27 @@
                 <div>
                     <h2 class="text-3xl font-extrabold text-white mb-4">Complete Mathematical & Empirical Computational Modeling</h2>
                     <p class="text-sm sm:text-base leading-7 text-slate-400">
-                        Exact mathematical execution is essential for personal financial planning, biological fitness programming, engineering estimations, and academic analysis. FastFinanceSuite delivers bank-standard amortization formulas, metabolic predictive equations (Mifflin-St Jeor & US Navy formulas), and scientific arithmetic engines running 100% within your client browser.
+                        Exact mathematical execution is essential for personal financial planning, biological fitness programming, engineering estimations, and academic analysis. FastFinanceSuite delivers bank-standard amortization formulas, metabolic predictive equations (Mifflin-St Jeor & US Navy formulas), and scientific arithmetic engines running 100% locally within your client browser.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-bed text-purple-400 mr-2"></i> 90-Minute Ultradian Sleep Cycles</h3>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-bed text-purple-400 mr-2"></i> 90-Minute REM Sleep Cycles</h3>
                         <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                            Human sleep follows natural 90-minute intervals encompassing Light, Deep, and Rapid Eye Movement (REM) sleep. Waking mid-cycle causes sleep inertia; aligning awakenings with natural cycle termination yields refreshed alertness.
+                            Human sleep follows 90-minute intervals encompassing Light, Deep, and REM sleep. Waking mid-cycle causes sleep inertia; aligning wakeups with cycle completion guarantees refreshed morning alertness.
                         </p>
                     </div>
                     <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-scale-balanced text-pink-500 mr-2"></i> Devine & Robinson Formulas</h3>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-bottle-water text-emerald-400 mr-2"></i> Daily Hydration Target</h3>
                         <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                            Ideal Body Weight calculations follow empirical medical standards: 
-                            <span class="font-mono text-purple-300 text-xs block my-1">Men: 50.0 kg + 2.3 kg per inch over 5 feet</span>
-                            <span class="font-mono text-purple-300 text-xs block">Women: 45.5 kg + 2.3 kg per inch over 5 feet</span>
-                            Used by clinicians to calculate precise medication dosages and baseline healthy weight goals.
+                            Optimal hydration requires 35ml per kg of body mass, plus an additional 350ml–500ml per 30 minutes of physical workout exertion or during creatine supplementation.
+                        </p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-graduation-cap text-pink-500 mr-2"></i> Final Grade Target Formula</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                            Academic weighted grade models utilize: <span class="font-mono text-purple-300 text-xs block my-1">Target = (Goal - Current × (1 - Weight)) / Weight</span> to determine exact test scores required to pass.
                         </p>
                     </div>
                 </div>
@@ -334,6 +355,12 @@
                             <i class="fa-solid fa-circle-question text-purple-400"></i> Are these calculations really processed locally?
                         </h3>
                         <p class="text-slate-400 text-sm leading-relaxed">Yes. All financial balances, body measurements, dates, and numbers are executed exclusively within your device's browser using JavaScript. No information is stored on remote servers.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-purple-400"></i> How much water should I drink daily based on weight and workout?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">The scientific baseline recommends 35ml per kilogram of body weight. For active individuals or gym training, add 350ml to 700ml to replenish cellular hydration.</p>
                     </div>
                     <div class="glass-card p-6 rounded-2xl">
                         <h3 class="font-bold text-white mb-2 flex items-center gap-2">
@@ -373,14 +400,14 @@
         </div>
     </div>
 
-    <!-- Complete Dynamic Modular Script Engine -->
+    <!-- Complete Dynamic Modular Script Engine with On-Page SEO Injection -->
     <script>
         const TOOLS = {
             mortgage: {
                 category: 'financial',
-                pageTitle: 'Free Mortgage & Loan Calculator — FastFinanceSuite',
-                heading: 'Mortgage & Loan <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate monthly payments, total interest, and full year-by-year amortization schedules for fixed loans.',
+                pageTitle: 'Mortgage Calculator with Taxes & Amortization Schedule — FastFinanceSuite',
+                heading: 'Mortgage & Amortization <span class="gradient-text">Calculator</span>',
+                desc: 'Estimate monthly mortgage payments (P&I), property taxes, and complete year-by-year amortization payoff schedules.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -456,9 +483,9 @@
             },
             autoloan: {
                 category: 'financial',
-                pageTitle: 'Auto Car Loan Calculator — FastFinanceSuite',
+                pageTitle: 'Auto Car Loan Calculator with Trade-In & Down Payment — FastFinanceSuite',
                 heading: 'Auto Car Loan <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate exact vehicle financing, interest payments, and trade-in deductions.',
+                desc: 'Calculate monthly vehicle financing payments, interest expenses, and trade-in deductions.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -837,9 +864,9 @@
             // Health & Fitness Suite
             hydration: {
                 category: 'health',
-                pageTitle: 'Daily Water Intake & Hydration Calculator — FastFinanceSuite',
+                pageTitle: 'Daily Water Intake Calculator (kg & Litres) — Hydration Target for Weight Loss & Gym',
                 heading: 'Daily Water Intake & Hydration <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate exact daily water intake based on mass and physical exertion.',
+                desc: 'Calculate your optimal daily water intake based on body weight (kg/lbs), workout duration, and creatine supplementation.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -859,9 +886,9 @@
                     const liters = baseMl / 1000;
                     const glasses = Math.round(baseMl / 250);
 
-                    document.getElementById('resSubtitle').innerText = "Recommended Daily Hydration";
+                    document.getElementById('resSubtitle').innerText = "Recommended Daily Hydration Target";
                     document.getElementById('resPrimaryValue').innerText = `${liters.toFixed(2)} Litres / day`;
-                    document.getElementById('resBreakdown').innerText = `Equivalent to ~${glasses} Standard Glasses (250ml) • Keeps cellular metabolism optimal.`;
+                    document.getElementById('resBreakdown').innerText = `Equivalent to ~${glasses} Standard Glasses (250ml) • Keeps cellular metabolism and recovery optimal.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
@@ -899,9 +926,9 @@
             },
             calorie: {
                 category: 'health',
-                pageTitle: 'Daily Calorie (TDEE) Calculator — FastFinanceSuite',
+                pageTitle: 'TDEE Calorie Calculator — Daily Maintenance, Bulking & Cutting Targets',
                 heading: 'Daily Calorie (TDEE) <span class="gradient-text">Calculator</span>',
-                desc: 'Compute your Total Daily Energy Expenditure for weight goals.',
+                desc: 'Calculate your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) for fat loss and muscle gain.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -948,7 +975,7 @@
 
                     document.getElementById('resSubtitle').innerText = "Daily Maintenance Calories (TDEE)";
                     document.getElementById('resPrimaryValue').innerText = `${tdee} kcal / day`;
-                    document.getElementById('resBreakdown').innerText = `Loss: ${tdee - 500} kcal • Surplus: ${tdee + 400} kcal • Base BMR: ${Math.round(bmr)} kcal`;
+                    document.getElementById('resBreakdown').innerText = `Fat Loss Deficit: ${tdee - 500} kcal • Muscle Surplus: ${tdee + 400} kcal • Base BMR: ${Math.round(bmr)} kcal`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
@@ -1030,9 +1057,9 @@
             },
             bodyfat: {
                 category: 'health',
-                pageTitle: 'Body Fat Percentage Calculator (US Navy) — FastFinanceSuite',
-                heading: 'Body Fat Percentage <span class="gradient-text">Calculator</span>',
-                desc: 'Estimate body fat % using the standard US Navy Circumference Method.',
+                pageTitle: 'Body Fat Percentage Calculator (US Navy Method) — FastFinanceSuite',
+                heading: 'Body Fat Percentage (US Navy) <span class="gradient-text">Calculator</span>',
+                desc: 'Calculate accurate body fat percentage using standard US Navy circumference measurements.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1065,7 +1092,7 @@
                     let bodyFat = g === 'male' ? 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(h)) - 450 : 495 / (1.29579 - 0.35004 * Math.log10(waist + 90 - neck) + 0.22100 * Math.log10(h)) - 450;
                     bodyFat = Math.max(3, Math.min(60, bodyFat));
 
-                    document.getElementById('resSubtitle').innerText = `Body Fat Estimate`;
+                    document.getElementById('resSubtitle').innerText = `Estimated Body Fat Percentage`;
                     document.getElementById('resPrimaryValue').innerText = `${bodyFat.toFixed(1)}%`;
                     document.getElementById('resBreakdown').innerText = `US Navy Standard • Lean Mass Ratio: ${(100 - bodyFat).toFixed(1)}%`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
@@ -1106,9 +1133,9 @@
             // Math & Academic Suite
             finalgrade: {
                 category: 'math',
-                pageTitle: 'Final Exam Grade Needed Calculator — FastFinanceSuite',
+                pageTitle: 'Final Grade Calculator — Calculate Exam Score Needed to Pass Course',
                 heading: 'Final Exam Grade Target <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate score required on your final exam to secure your desired course grade.',
+                desc: 'Calculate the exact score required on your final exam to secure your desired course letter grade or percentage.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -1283,9 +1310,9 @@
             // Lifestyle & Daily Suite
             sleepcycle: {
                 category: 'other',
-                pageTitle: '90-Minute Sleep Cycle & REM Optimizer — FastFinanceSuite',
-                heading: 'Sleep Cycle & REM <span class="gradient-text">Optimizer</span>',
-                desc: 'Calculate optimal wake times based on natural 90-minute ultradian sleep cycles.',
+                pageTitle: '90-Minute Sleep Cycle Calculator — REM Sleep Wake Up Time Optimizer',
+                heading: '90-Minute Sleep Cycle & REM <span class="gradient-text">Optimizer</span>',
+                desc: 'Calculate exact bedtime and wake-up schedules using 90-minute REM sleep cycles to prevent grogginess.',
                 renderInputs: () => `
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 mb-1.5">I Plan to Fall Asleep At</label>
@@ -1368,9 +1395,9 @@
             },
             gpa: {
                 category: 'other',
-                pageTitle: 'College Semester GPA Calculator — FastFinanceSuite',
+                pageTitle: 'College GPA Calculator (4.0 Scale) — Cumulative Semester Grade Points',
                 heading: 'GPA Grade Point <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate college semester GPA based on course credits.',
+                desc: 'Compute your weighted cumulative semester Grade Point Average on the standard 4.0 collegiate scale.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         <div>
