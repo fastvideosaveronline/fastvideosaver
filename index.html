@@ -4,27 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="metaTitle">FastFinance & Multi-Tool Suite — 30+ High-Precision Universal Calculators</title>
-    <meta id="metaDesc" name="description" content="Universal client-side computational suite. High-precision utilities for Mortgages, Auto Loans, Sleep REM Cycles, Daily Water Intake, TDEE, Hydration, and Final Exam Targets.">
+    <meta id="metaDesc" name="description" content="Universal client-side computational suite. High-precision utilities for Mortgages, PITI, Auto Loans, Car Depreciation, Sleep REM Cycles, Daily Water Intake, TDEE, Body Fat, and Final Exam Targets.">
     <link rel="canonical" href="https://www.fastvideosaver.online/">
 
     <!-- Dynamic Browser Tab SVG Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%238b5cf6'/><path d='M25 50 L42 67 L75 30' stroke='white' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
-    <!-- Structured Data (JSON-LD Schema for Google Rich Results) -->
+    <!-- Complete Rich Results FAQ & WebApplication JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "FastFinanceSuite Universal Calculator",
-      "url": "https://www.fastvideosaver.online/",
-      "description": "High-precision client-side calculators for mortgages, 90-minute REM sleep cycles, hydration water targets, and GPA grades.",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "FastFinanceSuite Universal Calculator Suite",
+          "url": "https://www.fastvideosaver.online/",
+          "description": "High-precision client-side calculations for mortgages, PITI escrow, vehicle depreciation, 90-minute REM sleep cycles, water intake, and final exam grades.",
+          "applicationCategory": "UtilityApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much water should I drink daily for weight loss or with creatine?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The baseline recommendation is 35 ml per kg of body weight, adding 500 ml - 1000 ml during exercise or when supplementing with creatine."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the 90-minute sleep cycle rule work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A normal human sleep cycle lasts approximately 90 minutes. Waking up at the end of a completed cycle prevents sleep inertia and morning fatigue."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What formula calculates the required final exam grade?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Required Grade = (Target Grade - (Current Grade * (1 - Weight))) / Weight."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you convert letter grades to a 4.0 GPA scale?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Multiply each course credit hour by its grade points (A=4, B=3, C=2, D=1), sum them, and divide by total credit hours."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the standard fixed mortgage amortization formula?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Monthly Payment = P * [r(1+r)^n] / [(1+r)^n - 1], where P is principal loan amount, r is monthly interest rate, and n is total monthly payments."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does PITI stand for in home financing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PITI stands for Principal, Interest, Taxes, and Insurance—the four components that make up a complete monthly housing escrow payment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly do new cars lose their value?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "New vehicles typically lose 20% of their value in the first year and approximately 15% each subsequent year."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How accurate is the US Navy body fat formula?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The US Navy circumference method is accurate within 3-4% of DEXA scans when measurements are taken consistently at standard anatomical points."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What caloric deficit is safe for sustainable fat loss?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A daily deficit of 300-500 calories below your calculated TDEE results in approximately 0.5 kg of sustainable weekly fat loss."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 
@@ -122,7 +203,7 @@
                     Mortgage & Amortization <span class="gradient-text">Calculator</span>
                 </h1>
                 <p id="activeToolDesc" class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto mb-8 leading-relaxed">
-                    Estimate monthly mortgage payments (P&I), property taxes, and complete year-by-year amortization payoff schedules.
+                    Estimate monthly mortgage payments (P&I), total borrowing interest, and full payoff schedules for fixed-rate home loans.
                 </p>
 
                 <!-- Core Dynamic Calculator Card -->
@@ -159,7 +240,7 @@
                         <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 space-y-4">
                             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                                 <div>
-                                    <span id="resSubtitle" class="text-xs font-bold text-purple-400 uppercase tracking-wider">Estimated Total Monthly Payment</span>
+                                    <span id="resSubtitle" class="text-xs font-bold text-purple-400 uppercase tracking-wider">Calculation Result</span>
                                     <h3 id="resPrimaryValue" class="text-3xl font-black text-white my-1">$0.00</h3>
                                     <p id="resBreakdown" class="text-xs text-slate-400">Adjust parameters above to view breakdown.</p>
                                 </div>
@@ -230,23 +311,32 @@
             </div>
         </section>
 
-        <!-- Directory: Complete Categorized Working Directory -->
+        <!-- Directory: Complete Categorized Working Directory with Realtime Search Filter -->
         <section id="directory" class="py-16 bg-slate-950/80 border-b border-slate-800/60 px-4">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-12">
+                <div class="text-center max-w-2xl mx-auto mb-10">
                     <h2 class="text-3xl font-black text-white mb-2">Complete Calculators Directory</h2>
-                    <p class="text-slate-400 text-sm">Click any specific calculator below to launch its dedicated computational engine instantly.</p>
+                    <p class="text-slate-400 text-sm mb-6">Click any specific calculator below to launch its dedicated computational engine instantly.</p>
+                    
+                    <!-- Search Input -->
+                    <div class="relative max-w-md mx-auto">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="dirSearchInput" onkeyup="filterDirectory()" placeholder="Search tools (e.g. water, mortgage, sleep, piti)..." class="w-full pl-11 pr-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs sm:text-sm focus:border-purple-500 focus:outline-none shadow-lg">
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="dirGridContainer">
                     <!-- Column 1: Financial -->
-                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-3 text-pink-400 font-bold text-sm">
-                            <i class="fa-solid fa-coins"></i> <span>Financial Tools</span>
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 dir-card">
+                        <div class="flex items-center justify-between mb-3 text-pink-400 font-bold text-sm border-b border-slate-800 pb-2">
+                            <span><i class="fa-solid fa-coins mr-1.5"></i> Financial Tools</span>
+                            <span class="text-[10px] bg-pink-500/20 text-pink-300 px-2 py-0.5 rounded-full font-mono">11 Tools</span>
                         </div>
-                        <ul class="text-xs space-y-2.5 text-slate-400">
+                        <ul class="text-xs space-y-2.5 text-slate-400 tool-list">
                             <li><button onclick="launchTool('mortgage')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Mortgage Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('piti')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>PITI Mortgage Payment</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('autoloan')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Auto Loan Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('cardeprec')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Car Depreciation</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('rental')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Rental Yield & Cash Flow</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('sip')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Global SIP & DCA</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('tipsplit')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Tip & Bill Splitter</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
@@ -260,12 +350,13 @@
                     </div>
 
                     <!-- Column 2: Health & Fitness -->
-                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-3 text-emerald-400 font-bold text-sm">
-                            <i class="fa-solid fa-heart-pulse"></i> <span>Health & Fitness</span>
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 dir-card">
+                        <div class="flex items-center justify-between mb-3 text-emerald-400 font-bold text-sm border-b border-slate-800 pb-2">
+                            <span><i class="fa-solid fa-heart-pulse mr-1.5"></i> Health & Fitness</span>
+                            <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-mono">7 Tools</span>
                         </div>
-                        <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><button onclick="launchTool('hydration')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Water Intake</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                        <ul class="text-xs space-y-2.5 text-slate-400 tool-list">
+                            <li><button onclick="launchTool('water')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Water Intake</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('bmi')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMI Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('calorie')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Calorie (TDEE)</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('bmr')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMR Metabolic Rate</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
@@ -276,12 +367,13 @@
                     </div>
 
                     <!-- Column 3: Math & Academic -->
-                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-3 text-purple-400 font-bold text-sm">
-                            <i class="fa-solid fa-square-root-variable"></i> <span>Math & Study</span>
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 dir-card">
+                        <div class="flex items-center justify-between mb-3 text-purple-400 font-bold text-sm border-b border-slate-800 pb-2">
+                            <span><i class="fa-solid fa-square-root-variable mr-1.5"></i> Math & Study</span>
+                            <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full font-mono">6 Tools</span>
                         </div>
-                        <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><button onclick="launchTool('finalgrade')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Final Exam Grade Needed</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                        <ul class="text-xs space-y-2.5 text-slate-400 tool-list">
+                            <li><button onclick="launchTool('finalgrade')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Final Exam Grade Target</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('percentage')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Percentage Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('fraction')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fraction to Decimal</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('random')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Random Number Generator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
@@ -291,15 +383,16 @@
                     </div>
 
                     <!-- Column 4: Lifestyle & Daily -->
-                    <div class="glass-card p-5 rounded-2xl border border-slate-800">
-                        <div class="flex items-center gap-2 mb-3 text-cyan-400 font-bold text-sm">
-                            <i class="fa-solid fa-calendar-days"></i> <span>Lifestyle & Daily</span>
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 dir-card">
+                        <div class="flex items-center justify-between mb-3 text-cyan-400 font-bold text-sm border-b border-slate-800 pb-2">
+                            <span><i class="fa-solid fa-calendar-days mr-1.5"></i> Lifestyle & Daily</span>
+                            <span class="text-[10px] bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded-full font-mono">6 Tools</span>
                         </div>
-                        <ul class="text-xs space-y-2.5 text-slate-400">
+                        <ul class="text-xs space-y-2.5 text-slate-400 tool-list">
                             <li><button onclick="launchTool('sleepcycle')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Sleep Cycle (90m REM)</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('age')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Exact Chronological Age</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('datediff')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Date Difference Duration</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('gpa')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>GPA Grade Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('gpa')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>College GPA Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('subnet')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Subnet CIDR IP Tool</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                             <li><button onclick="launchTool('password')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Secure Password Generator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                         </ul>
@@ -308,7 +401,7 @@
             </div>
         </section>
 
-        <!-- SEO Editorial Content -->
+        <!-- SEO Editorial Content & Scientific Mathematical Guides -->
         <section id="guide" class="py-20 px-4 max-w-5xl mx-auto leading-relaxed text-slate-300">
             <article class="space-y-10">
                 <div>
@@ -341,32 +434,93 @@
             </article>
         </section>
 
-        <!-- FAQs Section -->
+        <!-- SEO-Targeted FAQ Rich Content Section (Matching All 10 Keywords) -->
         <section id="faqs" class="py-16 bg-slate-950/80 border-t border-slate-800/80 px-4">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-extrabold text-white mb-3">Frequently Asked Questions</h2>
-                    <p class="text-slate-400 text-sm">Everything you need to know about our free universal calculation suite.</p>
+                    <h2 class="text-3xl font-extrabold text-white mb-3">Frequently Asked Questions & Formulas</h2>
+                    <p class="text-slate-400 text-sm">Authoritative answers and mathematical standards for our universal computational suite.</p>
                 </div>
 
                 <div class="space-y-4">
+                    <!-- FAQ 1: Water Intake -->
                     <div class="glass-card p-6 rounded-2xl">
                         <h3 class="font-bold text-white mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-circle-question text-purple-400"></i> Are these calculations really processed locally?
+                            <i class="fa-solid fa-circle-question text-emerald-400"></i> How much water should I drink daily for weight loss or with creatine?
                         </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Yes. All financial balances, body measurements, dates, and numbers are executed exclusively within your device's browser using JavaScript. No information is stored on remote servers.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">The baseline recommendation is 35 ml per kg of body weight, adding 500 ml - 1000 ml during exercise or when supplementing with creatine to sustain intra-cellular muscular hydration and optimal metabolic rates.</p>
                     </div>
+
+                    <!-- FAQ 2: Sleep Cycle -->
                     <div class="glass-card p-6 rounded-2xl">
                         <h3 class="font-bold text-white mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-circle-question text-purple-400"></i> How much water should I drink daily based on weight and workout?
+                            <i class="fa-solid fa-circle-question text-cyan-400"></i> How does the 90-minute sleep cycle rule work?
                         </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">The scientific baseline recommends 35ml per kilogram of body weight. For active individuals or gym training, add 350ml to 700ml to replenish cellular hydration.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">A normal human sleep cycle lasts approximately 90 minutes across Light, Deep, and REM stages. Waking up at the natural boundary of a completed cycle prevents sleep inertia, morning grogginess, and daytime fatigue.</p>
                     </div>
+
+                    <!-- FAQ 3: Final Grade -->
                     <div class="glass-card p-6 rounded-2xl">
                         <h3 class="font-bold text-white mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-circle-question text-purple-400"></i> Are all calculators free with unlimited calculations?
+                            <i class="fa-solid fa-circle-question text-purple-400"></i> What formula calculates the required final exam grade?
                         </h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Yes. Every single tool in our directory is completely free with zero usage limits and no registration required.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">The weighted formula is: <span class="font-mono text-purple-300">Required Grade = (Target Grade - (Current Grade × (1 - Weight))) / Weight</span>. This reveals the precise score needed on your final exam to secure your target course GPA.</p>
+                    </div>
+
+                    <!-- FAQ 4: College GPA -->
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-pink-400"></i> How do you convert letter grades to a 4.0 GPA scale?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Multiply each course credit hour by its numerical grade points (A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, C = 2.0, D = 1.0), sum the total grade points, and divide by total credit hours completed.</p>
+                    </div>
+
+                    <!-- FAQ 5: Mortgage Amortization -->
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-purple-400"></i> What is the standard fixed mortgage amortization formula?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Monthly Payment = <span class="font-mono text-purple-300">P × [r(1+r)^n] / [(1+r)^n - 1]</span>, where P is principal loan balance, r is periodic monthly interest rate (Annual Rate / 12), and n is total monthly payments (e.g. 360 months for 30 years).</p>
+                    </div>
+
+                    <!-- FAQ 6: PITI -->
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-amber-400"></i> What does PITI stand for in home financing?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">PITI stands for Principal, Interest, Taxes, and Insurance. It reflects your complete all-in monthly out-of-pocket housing cost, including property escrow withholdings and homeowner hazard insurance.</p>
+                    </div>
+
+                    <!-- FAQ 7: Auto Loan -->
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-cyan-400"></i> How does a down payment reduce auto loan interest costs?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">A higher down payment or trade-in value lowers the net financed principal, directly decreasing the monthly installment burden and the total compounding interest fees paid across the 36-to-72 month financing term.</p>
+                    </div>
+
+                    <!-- FAQ 8: Car Depreciation -->
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-rose-400"></i> How quickly do new cars lose their value?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">New motor vehicles typically lose approximately 20% of their market value during the first year of ownership, followed by steady ~15% compounding annual depreciation over the next 4 years.</p>
+                    </div>
+
+                    <!-- FAQ 9: Body Fat -->
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-emerald-400"></i> How accurate is the US Navy body fat formula?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">The US Navy circumference method is accurate within 3% to 4% of clinical DEXA and hydrostatic scans when neck, waist, and height measurements are recorded consistently at standard anatomical landmarks.</p>
+                    </div>
+
+                    <!-- FAQ 10: TDEE & Calorie Deficit -->
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-pink-400"></i> What caloric deficit is safe for sustainable fat loss?
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">A daily caloric deficit of 300 to 500 kcal below your Total Daily Energy Expenditure (TDEE) produces approximately 0.5 kg (1 lb) of sustainable fat loss per week without sacrificing lean muscle mass or metabolic health.</p>
                     </div>
                 </div>
             </div>
@@ -400,14 +554,15 @@
         </div>
     </div>
 
-    <!-- Complete Dynamic Modular Script Engine with On-Page SEO Injection -->
+    <!-- Complete Dynamic Modular Script Engine with All 10 Target Tools & Full SEO Injection -->
     <script>
         const TOOLS = {
+            // 1. Mortgage Amortization
             mortgage: {
                 category: 'financial',
                 pageTitle: 'Mortgage Calculator with Taxes & Amortization Schedule — FastFinanceSuite',
                 heading: 'Mortgage & Amortization <span class="gradient-text">Calculator</span>',
-                desc: 'Estimate monthly mortgage payments (P&I), property taxes, and complete year-by-year amortization payoff schedules.',
+                desc: 'Estimate monthly mortgage payments (P&I), total borrowing interest, and full payoff schedules for fixed-rate home loans.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -481,11 +636,58 @@
                     }
                 }
             },
+
+            // 2. PITI Mortgage Payment
+            piti: {
+                category: 'financial',
+                pageTitle: 'PITI Mortgage Calculator — Principal, Interest, Taxes & Insurance Breakdown',
+                heading: 'PITI Mortgage Payment <span class="gradient-text">Calculator</span>',
+                desc: 'Calculate your total all-in monthly housing payment including principal, interest, annual property taxes, and homeowners insurance.',
+                renderInputs: () => `
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Home Price ($)</label>
+                            <input type="number" id="inp_piti_price" value="350000" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Down Payment ($)</label>
+                            <input type="number" id="inp_piti_down" value="70000" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Annual Property Tax ($)</label>
+                            <input type="number" id="inp_piti_tax" value="3600" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Annual Insurance ($)</label>
+                            <input type="number" id="inp_piti_ins" value="1200" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
+                        </div>
+                    </div>
+                `,
+                compute: () => {
+                    const price = parseFloat(document.getElementById('inp_piti_price').value) || 350000;
+                    const down = parseFloat(document.getElementById('inp_piti_down').value) || 70000;
+                    const tax = parseFloat(document.getElementById('inp_piti_tax').value) || 3600;
+                    const ins = parseFloat(document.getElementById('inp_piti_ins').value) || 1200;
+
+                    const loan = Math.max(0, price - down);
+                    const rate = 0.065 / 12;
+                    const n = 360;
+                    const pi = loan * (rate * Math.pow(1 + rate, n)) / (Math.pow(1 + rate, n) - 1);
+                    const piti = pi + (tax / 12) + (ins / 12);
+
+                    document.getElementById('resSubtitle').innerText = "Total Monthly PITI Payment";
+                    document.getElementById('resPrimaryValue').innerText = "$" + piti.toFixed(2) + " / mo";
+                    document.getElementById('resBreakdown').innerText = `Principal & Interest: $${pi.toFixed(2)} • Taxes: $${(tax/12).toFixed(2)}/mo • Home Insurance: $${(ins/12).toFixed(2)}/mo`;
+                    document.getElementById('extraDataContainer').classList.add('hidden');
+                }
+            },
+
+            // 3. Auto Car Loan
             autoloan: {
                 category: 'financial',
                 pageTitle: 'Auto Car Loan Calculator with Trade-In & Down Payment — FastFinanceSuite',
                 heading: 'Auto Car Loan <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate monthly vehicle financing payments, interest expenses, and trade-in deductions.',
+                desc: 'Calculate monthly vehicle financing payments, interest expenses, and trade-in value deductions across 36 to 72-month terms.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -528,6 +730,43 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 4. Car Depreciation
+            cardeprec: {
+                category: 'financial',
+                pageTitle: 'Car Depreciation Calculator — 5-Year Vehicle Value Loss & Resale Valuation',
+                heading: 'Car Depreciation <span class="gradient-text">Calculator</span>',
+                desc: 'Estimate 5-year vehicle depreciation rates, market resale values, and annual ownership cost loss.',
+                renderInputs: () => `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Vehicle Purchase Price ($)</label>
+                            <input type="number" id="inp_dep_price" value="40000" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Vehicle Ownership (Years)</label>
+                            <input type="number" id="inp_dep_years" value="5" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
+                        </div>
+                    </div>
+                `,
+                compute: () => {
+                    const price = parseFloat(document.getElementById('inp_dep_price').value) || 40000;
+                    const years = parseInt(document.getElementById('inp_dep_years').value) || 5;
+
+                    let val = price * 0.80; // 20% year 1
+                    for (let i = 2; i <= years; i++) {
+                        val = val * 0.85; // 15% per consecutive year
+                    }
+                    const totalLoss = price - val;
+
+                    document.getElementById('resSubtitle').innerText = `Estimated Resale Value After ${years} Years`;
+                    document.getElementById('resPrimaryValue').innerText = "$" + Math.round(val).toLocaleString('en-US');
+                    document.getElementById('resBreakdown').innerText = `Total Value Loss: $${Math.round(totalLoss).toLocaleString()} (~${((totalLoss/price)*100).toFixed(0)}% depreciation).`;
+                    document.getElementById('extraDataContainer').classList.add('hidden');
+                }
+            },
+
+            // 5. Rental Yield & Cashflow
             rental: {
                 category: 'financial',
                 pageTitle: 'Rental Property Yield & Cash Flow Calculator — FastFinanceSuite',
@@ -566,6 +805,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 6. Global SIP & DCA
             sip: {
                 category: 'financial',
                 pageTitle: 'Global SIP & DCA Compounding Calculator — FastFinanceSuite',
@@ -603,6 +844,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 7. Tip Splitter
             tipsplit: {
                 category: 'financial',
                 pageTitle: 'Tip & Bill Splitter Calculator — FastFinanceSuite',
@@ -638,6 +881,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 8. Fuel & Trip Cost
             fueltrip: {
                 category: 'financial',
                 pageTitle: 'Fuel & Road Trip Cost Calculator — FastFinanceSuite',
@@ -672,6 +917,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 9. Compound Interest
             compound: {
                 category: 'financial',
                 pageTitle: 'Compound Interest Calculator — FastFinanceSuite',
@@ -715,6 +962,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 10. Inflation
             inflation: {
                 category: 'financial',
                 pageTitle: 'Inflation Purchasing Power Calculator — FastFinanceSuite',
@@ -750,6 +999,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 11. Credit Card Payoff
             ccpayoff: {
                 category: 'financial',
                 pageTitle: 'Credit Card Debt Payoff Calculator — FastFinanceSuite',
@@ -795,6 +1046,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 12. Salary Converter
             salary: {
                 category: 'financial',
                 pageTitle: 'Salary & Hourly Wage Calculator — FastFinanceSuite',
@@ -831,6 +1084,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 13. Investment ROI
             roi: {
                 category: 'financial',
                 pageTitle: 'Investment ROI Calculator — FastFinanceSuite',
@@ -861,11 +1116,11 @@
                 }
             },
 
-            // Health & Fitness Suite
-            hydration: {
+            // 14. Water Intake (Supports both 'water' and 'hydration')
+            water: {
                 category: 'health',
                 pageTitle: 'Daily Water Intake Calculator (kg & Litres) — Hydration Target for Weight Loss & Gym',
-                heading: 'Daily Water Intake & Hydration <span class="gradient-text">Calculator</span>',
+                heading: 'Water Intake & Hydration <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate your optimal daily water intake based on body weight (kg/lbs), workout duration, and creatine supplementation.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -892,6 +1147,38 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+            hydration: {
+                category: 'health',
+                pageTitle: 'Daily Water Intake Calculator (kg & Litres) — Hydration Target for Weight Loss & Gym',
+                heading: 'Water Intake & Hydration <span class="gradient-text">Calculator</span>',
+                desc: 'Calculate your optimal daily water intake based on body weight (kg/lbs), workout duration, and creatine supplementation.',
+                renderInputs: () => `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Body Weight (kg)</label>
+                            <input type="number" id="inp_hy_w" value="70" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Daily Exercise Time (Minutes)</label>
+                            <input type="number" id="inp_hy_ex" value="45" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
+                        </div>
+                    </div>
+                `,
+                compute: () => {
+                    const w = parseFloat(document.getElementById('inp_hy_w').value) || 70;
+                    const ex = parseFloat(document.getElementById('inp_hy_ex').value) || 0;
+                    const baseMl = (w * 35) + ((ex / 30) * 350);
+                    const liters = baseMl / 1000;
+                    const glasses = Math.round(baseMl / 250);
+
+                    document.getElementById('resSubtitle').innerText = "Recommended Daily Hydration Target";
+                    document.getElementById('resPrimaryValue').innerText = `${liters.toFixed(2)} Litres / day`;
+                    document.getElementById('resBreakdown').innerText = `Equivalent to ~${glasses} Standard Glasses (250ml) • Keeps cellular metabolism and recovery optimal.`;
+                    document.getElementById('extraDataContainer').classList.add('hidden');
+                }
+            },
+
+            // 15. BMI
             bmi: {
                 category: 'health',
                 pageTitle: 'BMI Body Mass Index Calculator — FastFinanceSuite',
@@ -924,6 +1211,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 16. Daily Calorie TDEE
             calorie: {
                 category: 'health',
                 pageTitle: 'TDEE Calorie Calculator — Daily Maintenance, Bulking & Cutting Targets',
@@ -979,6 +1268,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 17. BMR
             bmr: {
                 category: 'health',
                 pageTitle: 'BMR Basal Metabolic Rate Calculator — FastFinanceSuite',
@@ -1022,6 +1313,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 18. Ideal Weight
             idealweight: {
                 category: 'health',
                 pageTitle: 'Ideal Body Weight (IBW) Calculator — FastFinanceSuite',
@@ -1055,11 +1348,13 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 19. Body Fat (US Navy)
             bodyfat: {
                 category: 'health',
                 pageTitle: 'Body Fat Percentage Calculator (US Navy Method) — FastFinanceSuite',
-                heading: 'Body Fat Percentage (US Navy) <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate accurate body fat percentage using standard US Navy circumference measurements.',
+                heading: 'Body Fat % (US Navy) <span class="gradient-text">Calculator</span>',
+                desc: 'Calculate accurate body fat percentage using standard US Navy circumference measurements (neck, waist, and height).',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1098,6 +1393,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 20. Running Pace
             pace: {
                 category: 'health',
                 pageTitle: 'Running Pace & Speed Calculator — FastFinanceSuite',
@@ -1130,7 +1427,7 @@
                 }
             },
 
-            // Math & Academic Suite
+            // 21. Final Exam Target Grade
             finalgrade: {
                 category: 'math',
                 pageTitle: 'Final Grade Calculator — Calculate Exam Score Needed to Pass Course',
@@ -1165,6 +1462,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 22. Percentage
             percentage: {
                 category: 'math',
                 pageTitle: 'Percentage Calculator — FastFinanceSuite',
@@ -1193,6 +1492,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 23. Fraction to Decimal
             fraction: {
                 category: 'math',
                 pageTitle: 'Fraction to Decimal Calculator — FastFinanceSuite',
@@ -1222,6 +1523,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 24. Random Generator
             random: {
                 category: 'math',
                 pageTitle: 'Random Number Generator — FastFinanceSuite',
@@ -1250,6 +1553,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 25. Right Triangle
             triangle: {
                 category: 'math',
                 pageTitle: 'Right Triangle Calculator — FastFinanceSuite',
@@ -1280,6 +1585,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 26. Standard Deviation
             stddev: {
                 category: 'math',
                 pageTitle: 'Standard Deviation Calculator — FastFinanceSuite',
@@ -1307,7 +1614,7 @@
                 }
             },
 
-            // Lifestyle & Daily Suite
+            // 27. Sleep Cycle REM Optimizer
             sleepcycle: {
                 category: 'other',
                 pageTitle: '90-Minute Sleep Cycle Calculator — REM Sleep Wake Up Time Optimizer',
@@ -1335,6 +1642,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 28. Age Calculator
             age: {
                 category: 'other',
                 pageTitle: 'Exact Chronological Age Calculator — FastFinanceSuite',
@@ -1364,6 +1673,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 29. Date Difference
             datediff: {
                 category: 'other',
                 pageTitle: 'Date Difference Duration Calculator — FastFinanceSuite',
@@ -1393,10 +1704,12 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 30. College GPA
             gpa: {
                 category: 'other',
                 pageTitle: 'College GPA Calculator (4.0 Scale) — Cumulative Semester Grade Points',
-                heading: 'GPA Grade Point <span class="gradient-text">Calculator</span>',
+                heading: 'College Semester GPA <span class="gradient-text">Calculator</span>',
                 desc: 'Compute your weighted cumulative semester Grade Point Average on the standard 4.0 collegiate scale.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -1441,6 +1754,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 31. Subnet CIDR
             subnet: {
                 category: 'other',
                 pageTitle: 'IPv4 CIDR Subnet Calculator — FastFinanceSuite',
@@ -1474,6 +1789,8 @@
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
+
+            // 32. Cryptographic Password
             password: {
                 category: 'other',
                 pageTitle: 'Cryptographic Password Generator — FastFinanceSuite',
@@ -1552,8 +1869,10 @@
                 b.classList.remove('tab-active');
                 b.classList.add('text-slate-400');
             });
-            document.getElementById(`cat-${tool.category}`).classList.add('tab-active');
-            document.getElementById(`cat-${tool.category}`).classList.remove('text-slate-400');
+            if(document.getElementById(`cat-${tool.category}`)) {
+                document.getElementById(`cat-${tool.category}`).classList.add('tab-active');
+                document.getElementById(`cat-${tool.category}`).classList.remove('text-slate-400');
+            }
 
             renderSubtoolBar(tool.category);
 
@@ -1575,8 +1894,31 @@
             const sub = document.getElementById('resSubtitle').innerText;
             const val = document.getElementById('resPrimaryValue').innerText;
             const bk = document.getElementById('resBreakdown').innerText;
-            navigator.clipboard.writeText(`${sub}: ${val}\n${bk}\nCalculated free at: https://fastvideosaver.online/?tool=${currentActiveTool}`);
+            navigator.clipboard.writeText(`${sub}: ${val}
+${bk}
+Calculated free at: https://fastvideosaver.online/?tool=${currentActiveTool}`);
             alert("Calculation data copied to clipboard!");
+        }
+
+        // Live Realtime Directory Filter
+        function filterDirectory() {
+            const query = document.getElementById('dirSearchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.dir-card');
+            
+            cards.forEach(card => {
+                const items = card.querySelectorAll('.tool-list li');
+                let hasMatch = false;
+                items.forEach(li => {
+                    const text = li.innerText.toLowerCase();
+                    if (text.includes(query)) {
+                        li.style.display = 'block';
+                        hasMatch = true;
+                    } else {
+                        li.style.display = 'none';
+                    }
+                });
+                card.style.display = hasMatch ? 'block' : 'none';
+            });
         }
 
         const modalData = {
