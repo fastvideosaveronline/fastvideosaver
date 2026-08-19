@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastFinance & Multi-Tool Suite — 30+ High-Precision Universal Calculators</title>
-    <meta name="description" content="Universal client-side computational suite. High-precision utilities for Mortgages, Auto Loans, Sleep REM Cycles, Fuel Trip Costs, TDEE, Hydration, and Final Exam Targets.">
+    <title id="metaTitle">FastFinance & Multi-Tool Suite — 30+ High-Precision Universal Calculators</title>
+    <meta id="metaDesc" name="description" content="Universal client-side computational suite. High-precision utilities for Mortgages, Auto Loans, Sleep REM Cycles, Fuel Trip Costs, TDEE, Hydration, and Final Exam Targets.">
     <link rel="canonical" href="https://www.fastvideosaver.online/">
 
     <!-- Dynamic Browser Tab SVG Favicon -->
@@ -24,8 +24,6 @@
     <!-- Tailwind CSS & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -214,12 +212,12 @@
             </div>
         </section>
 
-        <!-- Directory: Complete Categorized Working Directory (SEO Silo Links Integrated) -->
+        <!-- Directory: Complete Categorized Working Directory -->
         <section id="directory" class="py-16 bg-slate-950/80 border-b border-slate-800/60 px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <h2 class="text-3xl font-black text-white mb-2">Complete Calculators Directory</h2>
-                    <p class="text-slate-400 text-sm">Click any specific calculator below to launch on-page or visit its dedicated standalone engine.</p>
+                    <p class="text-slate-400 text-sm">Click any specific calculator below to launch its dedicated computational engine instantly.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -229,17 +227,17 @@
                             <i class="fa-solid fa-coins"></i> <span>Financial Tools</span>
                         </div>
                         <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><a href="/mortgage-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Mortgage Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/autoloan-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Auto Loan Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/rental-yield-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Rental Yield & Cash Flow</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/sip-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Global SIP & DCA</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/tip-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Tip & Bill Splitter</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/fuel-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fuel & Trip Cost</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/compound-interest-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Compound Interest</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/inflation-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Inflation Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/credit-card-payoff-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Credit Card Payoff</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/salary-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Salary & Hourly Pay</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/roi-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Investment ROI</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><button onclick="launchTool('mortgage')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Mortgage Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('autoloan')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Auto Loan Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('rental')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Rental Yield & Cash Flow</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('sip')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Global SIP & DCA</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('tipsplit')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Tip & Bill Splitter</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('fueltrip')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fuel & Trip Cost</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('compound')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Compound Interest</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('inflation')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Inflation & Purchasing Power</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('ccpayoff')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Credit Card Payoff</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('salary')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Salary & Hourly Pay</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('roi')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Investment ROI</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                         </ul>
                     </div>
 
@@ -249,13 +247,13 @@
                             <i class="fa-solid fa-heart-pulse"></i> <span>Health & Fitness</span>
                         </div>
                         <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><a href="/hydration-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Water Intake</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/bmi-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMI Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/calorie-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Calorie (TDEE)</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/bmr-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMR Metabolic Rate</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/ideal-weight-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Ideal Body Weight</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/body-fat-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Body Fat % (US Navy)</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/pace-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Running Pace & Speed</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><button onclick="launchTool('hydration')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Water Intake</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('bmi')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMI Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('calorie')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Calorie (TDEE)</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('bmr')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMR Metabolic Rate</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('idealweight')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Ideal Body Weight</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('bodyfat')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Body Fat % (US Navy)</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('pace')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Running Pace & Speed</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                         </ul>
                     </div>
 
@@ -265,12 +263,12 @@
                             <i class="fa-solid fa-square-root-variable"></i> <span>Math & Study</span>
                         </div>
                         <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><a href="/final-grade-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Final Exam Grade Needed</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/percentage-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Percentage Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/fraction-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fraction to Decimal</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/random-number-generator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Random Generator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/triangle-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Triangle Geometry</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/standard-deviation-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Standard Deviation</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><button onclick="launchTool('finalgrade')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Final Exam Grade Needed</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('percentage')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Percentage Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('fraction')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fraction to Decimal</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('random')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Random Number Generator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('triangle')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Triangle Geometry</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('stddev')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Standard Deviation</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                         </ul>
                     </div>
 
@@ -280,12 +278,12 @@
                             <i class="fa-solid fa-calendar-days"></i> <span>Lifestyle & Daily</span>
                         </div>
                         <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><a href="/sleep-cycle-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Sleep Cycle (90m REM)</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/age-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Chronological Age</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/date-difference-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Date Difference</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/gpa-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>GPA Grade Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/subnet-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Subnet CIDR IP Tool</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
-                            <li><a href="/password-generator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Secure Password Generator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><button onclick="launchTool('sleepcycle')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Sleep Cycle (90m REM)</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('age')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Exact Chronological Age</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('datediff')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Date Difference Duration</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('gpa')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>GPA Grade Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('subnet')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Subnet CIDR IP Tool</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><button onclick="launchTool('password')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Secure Password Generator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
                         </ul>
                     </div>
                 </div>
@@ -380,6 +378,7 @@
         const TOOLS = {
             mortgage: {
                 category: 'financial',
+                pageTitle: 'Free Mortgage & Loan Calculator — FastFinanceSuite',
                 heading: 'Mortgage & Loan <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate monthly payments, total interest, and full year-by-year amortization schedules for fixed loans.',
                 renderInputs: () => `
@@ -457,6 +456,7 @@
             },
             autoloan: {
                 category: 'financial',
+                pageTitle: 'Auto Car Loan Calculator — FastFinanceSuite',
                 heading: 'Auto Car Loan <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate exact vehicle financing, interest payments, and trade-in deductions.',
                 renderInputs: () => `
@@ -503,6 +503,7 @@
             },
             rental: {
                 category: 'financial',
+                pageTitle: 'Rental Property Yield & Cash Flow Calculator — FastFinanceSuite',
                 heading: 'Rental Property Cash Flow & Yield <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate monthly net rental income, Gross Rental Yield, and Net Capitalization (Cap) Rate.',
                 renderInputs: () => `
@@ -525,7 +526,6 @@
                     const price = parseFloat(document.getElementById('inp_rent_price').value) || 0;
                     const rent = parseFloat(document.getElementById('inp_rent_income').value) || 0;
                     const expenses = parseFloat(document.getElementById('inp_rent_exp').value) || 0;
-
                     const annualRent = rent * 12;
                     const annualExpenses = expenses * 12;
                     const netOperatingIncome = annualRent - annualExpenses;
@@ -535,12 +535,13 @@
 
                     document.getElementById('resSubtitle').innerText = "Net Monthly Cash Flow";
                     document.getElementById('resPrimaryValue').innerText = "$" + monthlyCashflow.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " / mo";
-                    document.getElementById('resBreakdown').innerText = `Gross Yield: ${grossYield}% • Net Cap Rate: ${capRate}% • Annual Net Operating Income: $${netOperatingIncome.toLocaleString()}`;
+                    document.getElementById('resBreakdown').innerText = `Gross Yield: ${grossYield}% • Net Cap Rate: ${capRate}% • Annual NOI: $${netOperatingIncome.toLocaleString()}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             sip: {
                 category: 'financial',
+                pageTitle: 'Global SIP & DCA Compounding Calculator — FastFinanceSuite',
                 heading: 'Global SIP & DCA Compounding <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate regular dollar-cost averaging wealth accumulation in global index funds & stocks.',
                 renderInputs: () => `
@@ -571,12 +572,13 @@
 
                     document.getElementById('resSubtitle').innerText = `Total Portfolio Value after ${years} Years`;
                     document.getElementById('resPrimaryValue').innerText = "$" + Math.round(totalWealth).toLocaleString('en-US');
-                    document.getElementById('resBreakdown').innerText = `Total Invested: $${totalInvested.toLocaleString()} • Total Compounded Gains: $${Math.round(totalGains).toLocaleString()}`;
+                    document.getElementById('resBreakdown').innerText = `Invested: $${totalInvested.toLocaleString()} • Compounded Gains: $${Math.round(totalGains).toLocaleString()}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             tipsplit: {
                 category: 'financial',
+                pageTitle: 'Tip & Bill Splitter Calculator — FastFinanceSuite',
                 heading: 'Tip & Bill Splitter <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate customized tip percentages and split party bills evenly among friends.',
                 renderInputs: () => `
@@ -611,8 +613,9 @@
             },
             fueltrip: {
                 category: 'financial',
+                pageTitle: 'Fuel & Road Trip Cost Calculator — FastFinanceSuite',
                 heading: 'Fuel Cost & Road Trip <span class="gradient-text">Estimator</span>',
-                desc: 'Calculate exact gasoline budget, fuel consumption, and per-person travel costs for trips.',
+                desc: 'Calculate exact gasoline budget, fuel consumption, and per-person travel costs.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -638,12 +641,13 @@
 
                     document.getElementById('resSubtitle').innerText = "Estimated Total Fuel Cost";
                     document.getElementById('resPrimaryValue').innerText = "$" + totalCost.toFixed(2);
-                    document.getElementById('resBreakdown').innerText = `Total Fuel Volume Needed: ${fuelNeeded.toFixed(1)} units • Cost per Distance Unit: $${(totalCost / Math.max(1, dist)).toFixed(3)}`;
+                    document.getElementById('resBreakdown').innerText = `Fuel Needed: ${fuelNeeded.toFixed(1)} units • Cost per unit dist: $${(totalCost / Math.max(1, dist)).toFixed(3)}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             compound: {
                 category: 'financial',
+                pageTitle: 'Compound Interest Calculator — FastFinanceSuite',
                 heading: 'Compound Interest <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate geometric wealth growth with periodic monthly dollar-cost averaging.',
                 renderInputs: () => `
@@ -678,14 +682,15 @@
                     const totalContributed = p + (pmt * 12 * t);
                     const totalInterest = Math.max(0, totalFuture - totalContributed);
 
-                    document.getElementById('resSubtitle').innerText = `Total Future Investment Value (${t} Years)`;
+                    document.getElementById('resSubtitle').innerText = `Total Value (${t} Years)`;
                     document.getElementById('resPrimaryValue').innerText = "$" + totalFuture.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-                    document.getElementById('resBreakdown').innerText = `Contributed: $${totalContributed.toLocaleString()} • Total Compounded Earnings: $${totalInterest.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+                    document.getElementById('resBreakdown').innerText = `Contributed: $${totalContributed.toLocaleString()} • Compounded Earnings: $${totalInterest.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             inflation: {
                 category: 'financial',
+                pageTitle: 'Inflation Purchasing Power Calculator — FastFinanceSuite',
                 heading: 'Inflation Impact & Purchasing Power <span class="gradient-text">Calculator</span>',
                 desc: 'Analyze how fiat inflation erodes purchasing power over time.',
                 renderInputs: () => `
@@ -714,12 +719,13 @@
 
                     document.getElementById('resSubtitle').innerText = `Real Purchasing Power in ${years} Years`;
                     document.getElementById('resPrimaryValue').innerText = "$" + Math.round(futurePurchasingPower).toLocaleString('en-US');
-                    document.getElementById('resBreakdown').innerText = `Future Amount Needed for Same Value: $${Math.round(futureNeededToEqual).toLocaleString()} • Value Lost: $${Math.round(lostValue).toLocaleString()}`;
+                    document.getElementById('resBreakdown').innerText = `Needed for Same Value: $${Math.round(futureNeededToEqual).toLocaleString()} • Value Lost: $${Math.round(lostValue).toLocaleString()}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             ccpayoff: {
                 category: 'financial',
+                pageTitle: 'Credit Card Debt Payoff Calculator — FastFinanceSuite',
                 heading: 'Credit Card Debt Payoff <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate the exact timeline, monthly commitment, and interest cost to become debt free.',
                 renderInputs: () => `
@@ -758,14 +764,15 @@
 
                     document.getElementById('resSubtitle').innerText = "Time to Become Debt Free";
                     document.getElementById('resPrimaryValue').innerText = `${months} Months (${(months / 12).toFixed(1)} Years)`;
-                    document.getElementById('resBreakdown').innerText = `Total Paid: $${Math.round(totalPaid).toLocaleString()} • Interest Cost: $${Math.round(totalInterest).toLocaleString()}`;
+                    document.getElementById('resBreakdown').innerText = `Total Paid: $${Math.round(totalPaid).toLocaleString()} • Interest: $${Math.round(totalInterest).toLocaleString()}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             salary: {
                 category: 'financial',
+                pageTitle: 'Salary & Hourly Wage Calculator — FastFinanceSuite',
                 heading: 'Salary & Hourly Wage <span class="gradient-text">Converter</span>',
-                desc: 'Convert between annual salary, monthly pay, and equivalent hourly billing rates.',
+                desc: 'Convert between annual salary, monthly pay, and hourly billing rates.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -793,12 +800,13 @@
 
                     document.getElementById('resSubtitle').innerText = "Equivalent Hourly Wage Rate";
                     document.getElementById('resPrimaryValue').innerText = "$" + hourly.toFixed(2) + " / hour";
-                    document.getElementById('resBreakdown').innerText = `Monthly: $${monthly.toFixed(2)} • Weekly: $${weekly.toFixed(2)} • Based on ${totalHours} annual hours.`;
+                    document.getElementById('resBreakdown').innerText = `Monthly: $${monthly.toFixed(2)} • Weekly: $${weekly.toFixed(2)} • (${totalHours} hrs/yr)`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             roi: {
                 category: 'financial',
+                pageTitle: 'Investment ROI Calculator — FastFinanceSuite',
                 heading: 'Return on Investment (ROI) <span class="gradient-text">Calculator</span>',
                 desc: 'Quantify profitability and net capital returns for assets.',
                 renderInputs: () => `
@@ -829,6 +837,7 @@
             // Health & Fitness Suite
             hydration: {
                 category: 'health',
+                pageTitle: 'Daily Water Intake & Hydration Calculator — FastFinanceSuite',
                 heading: 'Daily Water Intake & Hydration <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate exact daily water intake based on mass and physical exertion.',
                 renderInputs: () => `
@@ -858,6 +867,7 @@
             },
             bmi: {
                 category: 'health',
+                pageTitle: 'BMI Body Mass Index Calculator — FastFinanceSuite',
                 heading: 'BMI Body Mass Index <span class="gradient-text">Calculator</span>',
                 desc: 'Check your Body Mass Index (BMI) and official World Health Organization categorization.',
                 renderInputs: () => `
@@ -883,12 +893,13 @@
 
                     document.getElementById('resSubtitle').innerText = `BMI Category: ${cat}`;
                     document.getElementById('resPrimaryValue').innerText = bmi.toFixed(1) + " kg/m²";
-                    document.getElementById('resBreakdown').innerText = `Healthy Weight Range for this height: ${(18.5 * h * h).toFixed(1)} kg – ${(24.9 * h * h).toFixed(1)} kg.`;
+                    document.getElementById('resBreakdown').innerText = `Healthy Range: ${(18.5 * h * h).toFixed(1)} kg – ${(24.9 * h * h).toFixed(1)} kg.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             calorie: {
                 category: 'health',
+                pageTitle: 'Daily Calorie (TDEE) Calculator — FastFinanceSuite',
                 heading: 'Daily Calorie (TDEE) <span class="gradient-text">Calculator</span>',
                 desc: 'Compute your Total Daily Energy Expenditure for weight goals.',
                 renderInputs: () => `
@@ -937,12 +948,13 @@
 
                     document.getElementById('resSubtitle').innerText = "Daily Maintenance Calories (TDEE)";
                     document.getElementById('resPrimaryValue').innerText = `${tdee} kcal / day`;
-                    document.getElementById('resBreakdown').innerText = `Weight Loss: ${tdee - 500} kcal • Muscle Gain: ${tdee + 400} kcal • Base BMR: ${Math.round(bmr)} kcal`;
+                    document.getElementById('resBreakdown').innerText = `Loss: ${tdee - 500} kcal • Surplus: ${tdee + 400} kcal • Base BMR: ${Math.round(bmr)} kcal`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             bmr: {
                 category: 'health',
+                pageTitle: 'BMR Basal Metabolic Rate Calculator — FastFinanceSuite',
                 heading: 'BMR Basal Metabolic Rate <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate baseline calories burned purely at rest using Mifflin-St Jeor equation.',
                 renderInputs: () => `
@@ -985,6 +997,7 @@
             },
             idealweight: {
                 category: 'health',
+                pageTitle: 'Ideal Body Weight (IBW) Calculator — FastFinanceSuite',
                 heading: 'Ideal Body Weight (IBW) <span class="gradient-text">Estimator</span>',
                 desc: 'Compute your scientific ideal target weight based on Devine formulas.',
                 renderInputs: () => `
@@ -1009,14 +1022,15 @@
                     let devine = g === 'male' ? 50 + (2.3 * inchesOver5Ft) : 45.5 + (2.3 * inchesOver5Ft);
                     let robinson = g === 'male' ? 52 + (1.9 * inchesOver5Ft) : 49 + (1.7 * inchesOver5Ft);
 
-                    document.getElementById('resSubtitle').innerText = "Ideal Weight Estimate (Devine Formula)";
+                    document.getElementById('resSubtitle').innerText = "Ideal Weight (Devine Formula)";
                     document.getElementById('resPrimaryValue').innerText = `${devine.toFixed(1)} kg (${(devine * 2.20462).toFixed(1)} lbs)`;
-                    document.getElementById('resBreakdown').innerText = `Robinson Formula: ${robinson.toFixed(1)} kg • Healthy BMI Target (22.0): ${(22 * (hCm/100) * (hCm/100)).toFixed(1)} kg`;
+                    document.getElementById('resBreakdown').innerText = `Robinson: ${robinson.toFixed(1)} kg • Healthy BMI (22.0): ${(22 * (hCm/100) * (hCm/100)).toFixed(1)} kg`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             bodyfat: {
                 category: 'health',
+                pageTitle: 'Body Fat Percentage Calculator (US Navy) — FastFinanceSuite',
                 heading: 'Body Fat Percentage <span class="gradient-text">Calculator</span>',
                 desc: 'Estimate body fat % using the standard US Navy Circumference Method.',
                 renderInputs: () => `
@@ -1059,6 +1073,7 @@
             },
             pace: {
                 category: 'health',
+                pageTitle: 'Running Pace & Speed Calculator — FastFinanceSuite',
                 heading: 'Running Pace & Speed <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate exact running pace per kilometer/mile and speed.',
                 renderInputs: () => `
@@ -1083,7 +1098,7 @@
 
                     document.getElementById('resSubtitle').innerText = "Average Running Pace";
                     document.getElementById('resPrimaryValue').innerText = `${paceMins}:${paceSecs < 10 ? '0' : ''}${paceSecs} / km`;
-                    document.getElementById('resBreakdown').innerText = `Speed: ${speedKmh.toFixed(2)} km/h • Equivalent Mile: ${(paceDecimal * 1.60934).toFixed(2)} min/mile`;
+                    document.getElementById('resBreakdown').innerText = `Speed: ${speedKmh.toFixed(2)} km/h • Mile Pace: ${(paceDecimal * 1.60934).toFixed(2)} min/mile`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
@@ -1091,6 +1106,7 @@
             // Math & Academic Suite
             finalgrade: {
                 category: 'math',
+                pageTitle: 'Final Exam Grade Needed Calculator — FastFinanceSuite',
                 heading: 'Final Exam Grade Target <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate score required on your final exam to secure your desired course grade.',
                 renderInputs: () => `
@@ -1124,6 +1140,7 @@
             },
             percentage: {
                 category: 'math',
+                pageTitle: 'Percentage Calculator — FastFinanceSuite',
                 heading: 'Percentage <span class="gradient-text">Calculator</span>',
                 desc: 'Compute percentages, proportion increases, and discount deductions.',
                 renderInputs: () => `
@@ -1151,6 +1168,7 @@
             },
             fraction: {
                 category: 'math',
+                pageTitle: 'Fraction to Decimal Calculator — FastFinanceSuite',
                 heading: 'Fraction to Decimal <span class="gradient-text">Converter</span>',
                 desc: 'Convert any fraction into exact decimal equivalents.',
                 renderInputs: () => `
@@ -1179,6 +1197,7 @@
             },
             random: {
                 category: 'math',
+                pageTitle: 'Random Number Generator — FastFinanceSuite',
                 heading: 'Random Number <span class="gradient-text">Generator</span>',
                 desc: 'Generate cryptographically random integers within range.',
                 renderInputs: () => `
@@ -1198,7 +1217,7 @@
                     const max = parseInt(document.getElementById('inp_rnd_max').value) || 100;
                     const rand = Math.floor(Math.random() * (max - min + 1)) + min;
 
-                    document.getElementById('resSubtitle').innerText = `Random Integer Result [${min} to ${max}]`;
+                    document.getElementById('resSubtitle').innerText = `Random Integer [${min} to ${max}]`;
                     document.getElementById('resPrimaryValue').innerText = rand.toString();
                     document.getElementById('resBreakdown').innerText = `Click calculate again for a new randomized value.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
@@ -1206,6 +1225,7 @@
             },
             triangle: {
                 category: 'math',
+                pageTitle: 'Right Triangle Calculator — FastFinanceSuite',
                 heading: 'Right Triangle <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate triangle hypotenuse, area, and perimeter.',
                 renderInputs: () => `
@@ -1235,6 +1255,7 @@
             },
             stddev: {
                 category: 'math',
+                pageTitle: 'Standard Deviation Calculator — FastFinanceSuite',
                 heading: 'Standard Deviation <span class="gradient-text">Calculator</span>',
                 desc: 'Compute mean, variance, and sample standard deviations for datasets.',
                 renderInputs: () => `
@@ -1262,6 +1283,7 @@
             // Lifestyle & Daily Suite
             sleepcycle: {
                 category: 'other',
+                pageTitle: '90-Minute Sleep Cycle & REM Optimizer — FastFinanceSuite',
                 heading: 'Sleep Cycle & REM <span class="gradient-text">Optimizer</span>',
                 desc: 'Calculate optimal wake times based on natural 90-minute ultradian sleep cycles.',
                 renderInputs: () => `
@@ -1282,12 +1304,13 @@
 
                     document.getElementById('resSubtitle').innerText = "Optimal Wake Times (Zero Grogginess)";
                     document.getElementById('resPrimaryValue').innerText = formatTime(c5) + " (5 Cycles)";
-                    document.getElementById('resBreakdown').innerText = `Other wake times: ${formatTime(c4)} (6h / 4 cycles) or ${formatTime(c6)} (9h / 6 cycles). Includes 14m falling asleep buffer.`;
+                    document.getElementById('resBreakdown').innerText = `Other wake times: ${formatTime(c4)} (6h / 4 cycles) or ${formatTime(c6)} (9h / 6 cycles). Includes 14m buffer.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             age: {
                 category: 'other',
+                pageTitle: 'Exact Chronological Age Calculator — FastFinanceSuite',
                 heading: 'Exact Chronological Age <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate precise living age down to exact days, hours, and minutes.',
                 renderInputs: () => `
@@ -1316,6 +1339,7 @@
             },
             datediff: {
                 category: 'other',
+                pageTitle: 'Date Difference Duration Calculator — FastFinanceSuite',
                 heading: 'Date Difference <span class="gradient-text">Calculator</span>',
                 desc: 'Find the exact span of days and weeks between two calendar dates.',
                 renderInputs: () => `
@@ -1344,6 +1368,7 @@
             },
             gpa: {
                 category: 'other',
+                pageTitle: 'College Semester GPA Calculator — FastFinanceSuite',
                 heading: 'GPA Grade Point <span class="gradient-text">Calculator</span>',
                 desc: 'Calculate college semester GPA based on course credits.',
                 renderInputs: () => `
@@ -1385,12 +1410,13 @@
 
                     document.getElementById('resSubtitle').innerText = "Cumulative Semester GPA";
                     document.getElementById('resPrimaryValue').innerText = gpa.toFixed(2) + " / 4.0";
-                    document.getElementById('resBreakdown').innerText = `Total Credits: ${totalCredits} • Total Grade Points Earned: ${totalPoints.toFixed(1)}`;
+                    document.getElementById('resBreakdown').innerText = `Total Credits: ${totalCredits} • Grade Points Earned: ${totalPoints.toFixed(1)}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             subnet: {
                 category: 'other',
+                pageTitle: 'IPv4 CIDR Subnet Calculator — FastFinanceSuite',
                 heading: 'Subnet IPv4 CIDR <span class="gradient-text">Calculator</span>',
                 desc: 'Compute network address, usable host ranges, and IP capacity.',
                 renderInputs: () => `
@@ -1417,12 +1443,13 @@
 
                     document.getElementById('resSubtitle').innerText = `Subnet Capacity for CIDR /${cidr}`;
                     document.getElementById('resPrimaryValue').innerText = `${totalHosts.toLocaleString()} Usable Hosts`;
-                    document.getElementById('resBreakdown').innerText = `Mask: ${cidr === 24 ? '255.255.255.0' : 'Custom Mask'} • Input IP: ${ip}`;
+                    document.getElementById('resBreakdown').innerText = `Mask: ${cidr === 24 ? '255.255.255.0' : 'Custom Mask'} • IP: ${ip}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             password: {
                 category: 'other',
+                pageTitle: 'Cryptographic Password Generator — FastFinanceSuite',
                 heading: 'Cryptographic Password <span class="gradient-text">Generator</span>',
                 desc: 'Generate ultra-secure random passwords locally.',
                 renderInputs: () => `
@@ -1441,7 +1468,7 @@
 
                     document.getElementById('resSubtitle').innerText = `Generated Password (${len} chars)`;
                     document.getElementById('resPrimaryValue').innerText = pwd;
-                    document.getElementById('resBreakdown').innerText = `Entropy Strength: ~${(len * 6.55).toFixed(0)} bits • Never transmitted online.`;
+                    document.getElementById('resBreakdown').innerText = `Entropy: ~${(len * 6.55).toFixed(0)} bits • Never transmitted online.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             }
@@ -1485,6 +1512,15 @@
             currentActiveTool = toolKey;
             const tool = TOOLS[toolKey];
 
+            // Dynamic browser title & URL Router for Direct Links
+            if (tool.pageTitle) {
+                document.title = tool.pageTitle;
+            }
+            if (history.pushState) {
+                const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?tool=' + toolKey;
+                window.history.pushState({path:newurl}, '', newurl);
+            }
+
             document.querySelectorAll('.tab-btn').forEach(b => {
                 b.classList.remove('tab-active');
                 b.classList.add('text-slate-400');
@@ -1512,7 +1548,7 @@
             const sub = document.getElementById('resSubtitle').innerText;
             const val = document.getElementById('resPrimaryValue').innerText;
             const bk = document.getElementById('resBreakdown').innerText;
-            navigator.clipboard.writeText(`${sub}: ${val}\n${bk}\nCalculated free at: https://fastvideosaver.online`);
+            navigator.clipboard.writeText(`${sub}: ${val}\n${bk}\nCalculated free at: https://fastvideosaver.online/?tool=${currentActiveTool}`);
             alert("Calculation data copied to clipboard!");
         }
 
@@ -1534,8 +1570,15 @@
             document.getElementById('legalModal').classList.add('hidden');
         }
 
+        // Direct URL auto-launch Router
         window.addEventListener('DOMContentLoaded', () => {
-            launchTool('mortgage');
+            const urlParams = new URLSearchParams(window.location.search);
+            const toolParam = urlParams.get('tool');
+            if (toolParam && TOOLS[toolParam]) {
+                launchTool(toolParam);
+            } else {
+                launchTool('mortgage');
+            }
         });
     </script>
 </body>
