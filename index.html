@@ -10,6 +10,17 @@
     <!-- Dynamic Browser Tab SVG Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%238b5cf6'/><path d='M25 50 L42 67 L75 30' stroke='white' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+
     <!-- Tailwind CSS & FontAwesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -58,7 +69,7 @@
     <!-- Header Navigation -->
     <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
-            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group overflow-hidden">
+            <a href="/" class="flex items-center gap-2.5 sm:gap-3 group overflow-hidden">
                 <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-purple-500/30 group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-calculator text-base sm:text-xl"></i>
                 </div>
@@ -118,14 +129,10 @@
                     </div>
 
                     <!-- Sub-Tool Selector Pill Bar -->
-                    <div id="subtool-bar" class="flex gap-2 mb-6 border-b border-slate-800/80 pb-3 overflow-x-auto text-xs font-semibold">
-                        <!-- Injected dynamically based on category -->
-                    </div>
+                    <div id="subtool-bar" class="flex gap-2 mb-6 border-b border-slate-800/80 pb-3 overflow-x-auto text-xs font-semibold"></div>
 
                     <!-- Dynamic Input Form Container -->
-                    <div id="dynamicFormContainer" class="space-y-4 text-left">
-                        <!-- Inputs change dynamically for each tool -->
-                    </div>
+                    <div id="dynamicFormContainer" class="space-y-4 text-left"></div>
 
                     <button onclick="executeCurrentCalculation()" id="calcActionBtn" class="gradient-btn w-full py-3.5 rounded-xl text-white font-bold text-sm flex items-center justify-center gap-2 mt-4 shadow-lg">
                         <i class="fa-solid fa-calculator"></i> Calculate Now
@@ -207,12 +214,12 @@
             </div>
         </section>
 
-        <!-- Directory: Complete Categorized Working Directory -->
+        <!-- Directory: Complete Categorized Working Directory (SEO Silo Links Integrated) -->
         <section id="directory" class="py-16 bg-slate-950/80 border-b border-slate-800/60 px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-12">
                     <h2 class="text-3xl font-black text-white mb-2">Complete Calculators Directory</h2>
-                    <p class="text-slate-400 text-sm">Click any specific calculator below to launch its dedicated computational engine instantly.</p>
+                    <p class="text-slate-400 text-sm">Click any specific calculator below to launch on-page or visit its dedicated standalone engine.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -222,17 +229,17 @@
                             <i class="fa-solid fa-coins"></i> <span>Financial Tools</span>
                         </div>
                         <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><button onclick="launchTool('mortgage')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Mortgage Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('autoloan')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Auto Loan Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('rental')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Rental Yield & Cash Flow</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('sip')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Global SIP & DCA</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('tipsplit')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Tip & Bill Splitter</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('fueltrip')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fuel & Trip Cost</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('compound')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Compound Interest</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('inflation')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Inflation & Purchasing Power</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('ccpayoff')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Credit Card Payoff</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('salary')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Salary & Hourly Pay</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('roi')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Investment ROI</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><a href="/mortgage-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Mortgage Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/autoloan-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Auto Loan Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/rental-yield-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Rental Yield & Cash Flow</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/sip-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Global SIP & DCA</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/tip-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Tip & Bill Splitter</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/fuel-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fuel & Trip Cost</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/compound-interest-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Compound Interest</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/inflation-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Inflation Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/credit-card-payoff-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Credit Card Payoff</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/salary-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Salary & Hourly Pay</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/roi-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Investment ROI</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
                         </ul>
                     </div>
 
@@ -242,13 +249,13 @@
                             <i class="fa-solid fa-heart-pulse"></i> <span>Health & Fitness</span>
                         </div>
                         <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><button onclick="launchTool('hydration')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Water Intake</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('bmi')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMI Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('calorie')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Calorie (TDEE)</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('bmr')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMR Metabolic Rate</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('idealweight')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Ideal Body Weight</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('bodyfat')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Body Fat % (US Navy)</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('pace')" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Running Pace & Speed</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><a href="/hydration-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Water Intake</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/bmi-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMI Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/calorie-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Daily Calorie (TDEE)</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/bmr-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>BMR Metabolic Rate</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/ideal-weight-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Ideal Body Weight</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/body-fat-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Body Fat % (US Navy)</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/pace-calculator.html" class="hover:text-emerald-400 text-left w-full transition-colors flex items-center justify-between"><span>Running Pace & Speed</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
                         </ul>
                     </div>
 
@@ -258,12 +265,12 @@
                             <i class="fa-solid fa-square-root-variable"></i> <span>Math & Study</span>
                         </div>
                         <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><button onclick="launchTool('finalgrade')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Final Exam Grade Needed</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('percentage')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Percentage Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('fraction')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fraction to Decimal</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('random')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Random Number Generator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('triangle')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Triangle Geometry</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('stddev')" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Standard Deviation</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><a href="/final-grade-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Final Exam Grade Needed</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/percentage-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Percentage Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/fraction-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Fraction to Decimal</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/random-number-generator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Random Generator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/triangle-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Triangle Geometry</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/standard-deviation-calculator.html" class="hover:text-purple-400 text-left w-full transition-colors flex items-center justify-between"><span>Standard Deviation</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
                         </ul>
                     </div>
 
@@ -273,19 +280,19 @@
                             <i class="fa-solid fa-calendar-days"></i> <span>Lifestyle & Daily</span>
                         </div>
                         <ul class="text-xs space-y-2.5 text-slate-400">
-                            <li><button onclick="launchTool('sleepcycle')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Sleep Cycle (90m REM)</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('age')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Exact Chronological Age</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('datediff')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Date Difference Duration</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('gpa')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>GPA Grade Calculator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('subnet')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Subnet CIDR IP Tool</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
-                            <li><button onclick="launchTool('password')" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Secure Password Generator</span> <i class="fa-solid fa-arrow-right text-[10px] opacity-40"></i></button></li>
+                            <li><a href="/sleep-cycle-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Sleep Cycle (90m REM)</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/age-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Chronological Age</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/date-difference-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Date Difference</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/gpa-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>GPA Grade Calculator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/subnet-calculator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Subnet CIDR IP Tool</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
+                            <li><a href="/password-generator.html" class="hover:text-cyan-400 text-left w-full transition-colors flex items-center justify-between"><span>Secure Password Generator</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-40"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEO Editorial Content (AdSense Requirement) -->
+        <!-- SEO Editorial Content -->
         <section id="guide" class="py-20 px-4 max-w-5xl mx-auto leading-relaxed text-slate-300">
             <article class="space-y-10">
                 <div>
@@ -370,9 +377,7 @@
 
     <!-- Complete Dynamic Modular Script Engine -->
     <script>
-        // Central Tool Definitions Registry
         const TOOLS = {
-            // Financial Suite
             mortgage: {
                 category: 'financial',
                 heading: 'Mortgage & Loan <span class="gradient-text">Calculator</span>',
@@ -558,17 +563,9 @@
                     const p = parseFloat(document.getElementById('inp_sip_amount').value) || 0;
                     const annualRate = parseFloat(document.getElementById('inp_sip_rate').value) || 0;
                     const years = parseFloat(document.getElementById('inp_sip_years').value) || 0;
-
                     const i = (annualRate / 100) / 12;
                     const n = years * 12;
-                    
-                    let totalWealth = 0;
-                    if (i > 0) {
-                        totalWealth = p * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
-                    } else {
-                        totalWealth = p * n;
-                    }
-
+                    let totalWealth = i > 0 ? p * ((Math.pow(1 + i, n) - 1) / i) * (1 + i) : p * n;
                     const totalInvested = p * n;
                     const totalGains = Math.max(0, totalWealth - totalInvested);
 
@@ -602,7 +599,6 @@
                     const bill = parseFloat(document.getElementById('inp_tip_bill').value) || 0;
                     const tipPct = parseFloat(document.getElementById('inp_tip_pct').value) || 0;
                     const people = parseInt(document.getElementById('inp_tip_split').value) || 1;
-
                     const tipAmount = bill * (tipPct / 100);
                     const totalBill = bill + tipAmount;
                     const perPerson = totalBill / Math.max(1, people);
@@ -624,7 +620,7 @@
                             <input type="number" id="inp_fuel_dist" value="350" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Vehicle Fuel Mileage (MPG or Km/L)</label>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Vehicle Mileage (MPG or Km/L)</label>
                             <input type="number" id="inp_fuel_eff" value="28" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
                         </div>
                         <div>
@@ -637,7 +633,6 @@
                     const dist = parseFloat(document.getElementById('inp_fuel_dist').value) || 0;
                     const eff = parseFloat(document.getElementById('inp_fuel_eff').value) || 1;
                     const price = parseFloat(document.getElementById('inp_fuel_price').value) || 0;
-
                     const fuelNeeded = eff > 0 ? dist / eff : 0;
                     const totalCost = fuelNeeded * price;
 
@@ -692,7 +687,7 @@
             inflation: {
                 category: 'financial',
                 heading: 'Inflation Impact & Purchasing Power <span class="gradient-text">Calculator</span>',
-                desc: 'Analyze how fiat inflation erodes purchasing power over time and determine future value needed.',
+                desc: 'Analyze how fiat inflation erodes purchasing power over time.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -713,7 +708,6 @@
                     const amount = parseFloat(document.getElementById('inp_inf_amt').value) || 0;
                     const rate = parseFloat(document.getElementById('inp_inf_rate').value) || 0;
                     const years = parseFloat(document.getElementById('inp_inf_years').value) || 0;
-
                     const futurePurchasingPower = amount / Math.pow(1 + rate / 100, years);
                     const futureNeededToEqual = amount * Math.pow(1 + rate / 100, years);
                     const lostValue = amount - futurePurchasingPower;
@@ -748,25 +742,23 @@
                     const balance = parseFloat(document.getElementById('inp_cc_bal').value) || 0;
                     const apr = parseFloat(document.getElementById('inp_cc_apr').value) || 0;
                     const monthly = parseFloat(document.getElementById('inp_cc_pmt').value) || 0;
-
                     const monthlyRate = (apr / 100) / 12;
                     const minInterest = balance * monthlyRate;
 
                     if (monthly <= minInterest) {
                         document.getElementById('resSubtitle').innerText = "Warning: Insufficient Payment";
                         document.getElementById('resPrimaryValue').innerText = "Never Paid Off";
-                        document.getElementById('resBreakdown').innerText = `Interest charges alone are $${minInterest.toFixed(2)}/mo. Increase payment above this amount.`;
+                        document.getElementById('resBreakdown').innerText = `Interest charges alone are $${minInterest.toFixed(2)}/mo. Increase payment.`;
                         document.getElementById('extraDataContainer').classList.add('hidden');
                         return;
                     }
-
                     const months = Math.ceil(-Math.log(1 - (monthlyRate * balance) / monthly) / Math.log(1 + monthlyRate));
                     const totalPaid = monthly * months;
                     const totalInterest = Math.max(0, totalPaid - balance);
 
                     document.getElementById('resSubtitle').innerText = "Time to Become Debt Free";
                     document.getElementById('resPrimaryValue').innerText = `${months} Months (${(months / 12).toFixed(1)} Years)`;
-                    document.getElementById('resBreakdown').innerText = `Total Paid: $${Math.round(totalPaid).toLocaleString()} • Total Interest Cost: $${Math.round(totalInterest).toLocaleString()}`;
+                    document.getElementById('resBreakdown').innerText = `Total Paid: $${Math.round(totalPaid).toLocaleString()} • Interest Cost: $${Math.round(totalInterest).toLocaleString()}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
@@ -801,14 +793,14 @@
 
                     document.getElementById('resSubtitle').innerText = "Equivalent Hourly Wage Rate";
                     document.getElementById('resPrimaryValue').innerText = "$" + hourly.toFixed(2) + " / hour";
-                    document.getElementById('resBreakdown').innerText = `Monthly: $${monthly.toFixed(2)} • Weekly: $${weekly.toFixed(2)} • Based on ${totalHours} annual work hours.`;
+                    document.getElementById('resBreakdown').innerText = `Monthly: $${monthly.toFixed(2)} • Weekly: $${weekly.toFixed(2)} • Based on ${totalHours} annual hours.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             roi: {
                 category: 'financial',
                 heading: 'Return on Investment (ROI) <span class="gradient-text">Calculator</span>',
-                desc: 'Quantify profitability and net capital returns for businesses, campaigns, or assets.',
+                desc: 'Quantify profitability and net capital returns for assets.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -829,7 +821,7 @@
 
                     document.getElementById('resSubtitle').innerText = "Return on Investment (ROI)";
                     document.getElementById('resPrimaryValue').innerText = roi.toFixed(2) + "%";
-                    document.getElementById('resBreakdown').innerText = `Net Profit: $${profit.toLocaleString('en-US', {minimumFractionDigits: 2})} on Initial Capital of $${cost.toLocaleString()}`;
+                    document.getElementById('resBreakdown').innerText = `Net Profit: $${profit.toLocaleString('en-US', {minimumFractionDigits: 2})} on Capital of $${cost.toLocaleString()}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
@@ -838,7 +830,7 @@
             hydration: {
                 category: 'health',
                 heading: 'Daily Water Intake & Hydration <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate exact daily water intake based on body mass and daily physical exertion.',
+                desc: 'Calculate exact daily water intake based on mass and physical exertion.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -854,8 +846,6 @@
                 compute: () => {
                     const w = parseFloat(document.getElementById('inp_hy_w').value) || 70;
                     const ex = parseFloat(document.getElementById('inp_hy_ex').value) || 0;
-
-                    // Base: ~35ml per kg + 350ml per 30 mins workout
                     const baseMl = (w * 35) + ((ex / 30) * 350);
                     const liters = baseMl / 1000;
                     const glasses = Math.round(baseMl / 250);
@@ -869,7 +859,7 @@
             bmi: {
                 category: 'health',
                 heading: 'BMI Body Mass Index <span class="gradient-text">Calculator</span>',
-                desc: 'Check your Body Mass Index (BMI) and official World Health Organization weight categorization.',
+                desc: 'Check your Body Mass Index (BMI) and official World Health Organization categorization.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -900,7 +890,7 @@
             calorie: {
                 category: 'health',
                 heading: 'Daily Calorie (TDEE) <span class="gradient-text">Calculator</span>',
-                desc: 'Compute your Total Daily Energy Expenditure for weight maintenance, cutting, or bulking.',
+                desc: 'Compute your Total Daily Energy Expenditure for weight goals.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -947,7 +937,7 @@
 
                     document.getElementById('resSubtitle').innerText = "Daily Maintenance Calories (TDEE)";
                     document.getElementById('resPrimaryValue').innerText = `${tdee} kcal / day`;
-                    document.getElementById('resBreakdown').innerText = `Weight Loss (Deficit): ${tdee - 500} kcal • Muscle Gain (Surplus): ${tdee + 400} kcal • Base BMR: ${Math.round(bmr)} kcal`;
+                    document.getElementById('resBreakdown').innerText = `Weight Loss: ${tdee - 500} kcal • Muscle Gain: ${tdee + 400} kcal • Base BMR: ${Math.round(bmr)} kcal`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
@@ -984,20 +974,19 @@
                     const age = parseFloat(document.getElementById('inp_bmr_age').value) || 25;
                     const h = parseFloat(document.getElementById('inp_bmr_h').value) || 175;
                     const w = parseFloat(document.getElementById('inp_bmr_w').value) || 70;
-
                     let bmr = (10 * w) + (6.25 * h) - (5 * age);
                     bmr = g === 'male' ? bmr + 5 : bmr - 161;
 
                     document.getElementById('resSubtitle').innerText = "Basal Metabolic Rate (BMR)";
                     document.getElementById('resPrimaryValue').innerText = `${Math.round(bmr)} kcal / day`;
-                    document.getElementById('resBreakdown').innerText = `This is the minimum energy your organs require to survive while resting in bed 24 hours.`;
+                    document.getElementById('resBreakdown').innerText = `Minimum energy required to survive while resting in bed 24 hours.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             idealweight: {
                 category: 'health',
                 heading: 'Ideal Body Weight (IBW) <span class="gradient-text">Estimator</span>',
-                desc: 'Compute your scientific ideal target weight based on Devine, Robinson, and Miller clinical formulas.',
+                desc: 'Compute your scientific ideal target weight based on Devine formulas.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1017,7 +1006,6 @@
                     const hCm = parseFloat(document.getElementById('inp_ibw_h').value) || 175;
                     const totalInches = hCm / 2.54;
                     const inchesOver5Ft = Math.max(0, totalInches - 60);
-
                     let devine = g === 'male' ? 50 + (2.3 * inchesOver5Ft) : 45.5 + (2.3 * inchesOver5Ft);
                     let robinson = g === 'male' ? 52 + (1.9 * inchesOver5Ft) : 49 + (1.7 * inchesOver5Ft);
 
@@ -1060,29 +1048,19 @@
                     const h = parseFloat(document.getElementById('inp_bf_h').value) || 175;
                     const neck = parseFloat(document.getElementById('inp_bf_neck').value) || 38;
                     const waist = parseFloat(document.getElementById('inp_bf_waist').value) || 82;
-
-                    let bodyFat = 0;
-                    if (g === 'male') {
-                        bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(h)) - 450;
-                    } else {
-                        bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(waist + 90 - neck) + 0.22100 * Math.log10(h)) - 450;
-                    }
+                    let bodyFat = g === 'male' ? 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(h)) - 450 : 495 / (1.29579 - 0.35004 * Math.log10(waist + 90 - neck) + 0.22100 * Math.log10(h)) - 450;
                     bodyFat = Math.max(3, Math.min(60, bodyFat));
 
-                    let status = "Fitness Level";
-                    if (bodyFat < 10) status = "Essential / Athletic";
-                    else if (bodyFat > 24) status = "Higher Body Fat Range";
-
-                    document.getElementById('resSubtitle').innerText = `Body Fat Estimate (${status})`;
+                    document.getElementById('resSubtitle').innerText = `Body Fat Estimate`;
                     document.getElementById('resPrimaryValue').innerText = `${bodyFat.toFixed(1)}%`;
-                    document.getElementById('resBreakdown').innerText = `US Navy Circumference Standard • Lean Mass Ratio: ${(100 - bodyFat).toFixed(1)}%`;
+                    document.getElementById('resBreakdown').innerText = `US Navy Standard • Lean Mass Ratio: ${(100 - bodyFat).toFixed(1)}%`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             pace: {
                 category: 'health',
                 heading: 'Running Pace & Speed <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate exact running pace per kilometer/mile and finish time estimates.',
+                desc: 'Calculate exact running pace per kilometer/mile and speed.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1098,7 +1076,6 @@
                 compute: () => {
                     const km = parseFloat(document.getElementById('inp_pace_dist').value) || 5;
                     const mins = parseFloat(document.getElementById('inp_pace_mins').value) || 25;
-
                     const paceDecimal = mins / km;
                     const paceMins = Math.floor(paceDecimal);
                     const paceSecs = Math.round((paceDecimal - paceMins) * 60);
@@ -1106,7 +1083,7 @@
 
                     document.getElementById('resSubtitle').innerText = "Average Running Pace";
                     document.getElementById('resPrimaryValue').innerText = `${paceMins}:${paceSecs < 10 ? '0' : ''}${paceSecs} / km`;
-                    document.getElementById('resBreakdown').innerText = `Speed: ${speedKmh.toFixed(2)} km/h • Equivalent Mile Pace: ${(paceDecimal * 1.60934).toFixed(2)} min/mile`;
+                    document.getElementById('resBreakdown').innerText = `Speed: ${speedKmh.toFixed(2)} km/h • Equivalent Mile: ${(paceDecimal * 1.60934).toFixed(2)} min/mile`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
@@ -1115,7 +1092,7 @@
             finalgrade: {
                 category: 'math',
                 heading: 'Final Exam Grade Target <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate the minimum score required on your final exam to secure your desired course grade.',
+                desc: 'Calculate score required on your final exam to secure your desired course grade.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div>
@@ -1136,21 +1113,19 @@
                     const cur = parseFloat(document.getElementById('inp_fg_current').value) || 0;
                     const tar = parseFloat(document.getElementById('inp_fg_target').value) || 0;
                     const w = parseFloat(document.getElementById('inp_fg_weight').value) || 30;
-
-                    // Target = (Current * (1 - Weight/100)) + (Final * Weight/100)
                     const weightFrac = w / 100;
                     const needed = (tar - (cur * (1 - weightFrac))) / weightFrac;
 
                     document.getElementById('resSubtitle').innerText = "Score Needed on Final Exam";
                     document.getElementById('resPrimaryValue').innerText = `${needed.toFixed(1)}%`;
-                    document.getElementById('resBreakdown').innerText = needed <= 100 ? `Achievable! You need at least ${needed.toFixed(1)}% on the final to get ${tar}%.` : `Requires extra credit: target exceeds 100% test standard.`;
+                    document.getElementById('resBreakdown').innerText = needed <= 100 ? `Achievable! Minimum ${needed.toFixed(1)}% needed on the final.` : `Requires extra credit: target exceeds 100% test standard.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             percentage: {
                 category: 'math',
                 heading: 'Percentage <span class="gradient-text">Calculator</span>',
-                desc: 'Compute percentages, proportion increases, and discount deductions instantly.',
+                desc: 'Compute percentages, proportion increases, and discount deductions.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1170,14 +1145,14 @@
 
                     document.getElementById('resSubtitle').innerText = `${pct}% of ${num}`;
                     document.getElementById('resPrimaryValue').innerText = res.toLocaleString('en-US', {maximumFractionDigits: 4});
-                    document.getElementById('resBreakdown').innerText = `Adding ${pct}%: ${(num + res).toLocaleString()} • Subtracting ${pct}%: ${(num - res).toLocaleString()}`;
+                    document.getElementById('resBreakdown').innerText = `Adding ${pct}%: ${(num + res).toLocaleString()} • Subtracting: ${(num - res).toLocaleString()}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             fraction: {
                 category: 'math',
                 heading: 'Fraction to Decimal <span class="gradient-text">Converter</span>',
-                desc: 'Convert any numerator/denominator fraction into exact decimal and simplified fractions.',
+                desc: 'Convert any fraction into exact decimal equivalents.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1193,9 +1168,7 @@
                 compute: () => {
                     const n = parseFloat(document.getElementById('inp_frac_num').value) || 0;
                     const d = parseFloat(document.getElementById('inp_frac_den').value) || 1;
-                    if (d === 0) {
-                        alert("Denominator cannot be 0!"); return;
-                    }
+                    if (d === 0) { alert("Denominator cannot be 0!"); return; }
                     const dec = n / d;
 
                     document.getElementById('resSubtitle').innerText = `Decimal Equivalent for ${n}/${d}`;
@@ -1207,7 +1180,7 @@
             random: {
                 category: 'math',
                 heading: 'Random Number <span class="gradient-text">Generator</span>',
-                desc: 'Generate truly cryptographically random integers within your custom range.',
+                desc: 'Generate cryptographically random integers within range.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1225,16 +1198,16 @@
                     const max = parseInt(document.getElementById('inp_rnd_max').value) || 100;
                     const rand = Math.floor(Math.random() * (max - min + 1)) + min;
 
-                    document.getElementById('resSubtitle').innerText = `Random Integer Result [Range: ${min} to ${max}]`;
+                    document.getElementById('resSubtitle').innerText = `Random Integer Result [${min} to ${max}]`;
                     document.getElementById('resPrimaryValue').innerText = rand.toString();
-                    document.getElementById('resBreakdown').innerText = `Click calculate button again to generate a new random value.`;
+                    document.getElementById('resBreakdown').innerText = `Click calculate again for a new randomized value.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             triangle: {
                 category: 'math',
                 heading: 'Right Triangle <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate triangle hypotenuse, area, and perimeter using Pythagorean theorem.',
+                desc: 'Calculate triangle hypotenuse, area, and perimeter.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1256,14 +1229,14 @@
 
                     document.getElementById('resSubtitle').innerText = "Hypotenuse (Side C)";
                     document.getElementById('resPrimaryValue').innerText = c.toFixed(3);
-                    document.getElementById('resBreakdown').innerText = `Triangle Area: ${area.toFixed(2)} sq units • Total Perimeter: ${perimeter.toFixed(2)} units`;
+                    document.getElementById('resBreakdown').innerText = `Triangle Area: ${area.toFixed(2)} sq units • Perimeter: ${perimeter.toFixed(2)} units`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             stddev: {
                 category: 'math',
                 heading: 'Standard Deviation <span class="gradient-text">Calculator</span>',
-                desc: 'Compute mean, variance, and sample/population standard deviations for datasets.',
+                desc: 'Compute mean, variance, and sample standard deviations for datasets.',
                 renderInputs: () => `
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 mb-1.5">Enter Numbers (Comma separated)</label>
@@ -1273,9 +1246,7 @@
                 compute: () => {
                     const raw = document.getElementById('inp_std_data').value;
                     const arr = raw.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
-                    if (arr.length < 2) {
-                        alert("Please enter at least 2 valid numbers!"); return;
-                    }
+                    if (arr.length < 2) { alert("Please enter at least 2 valid numbers!"); return; }
                     const n = arr.length;
                     const mean = arr.reduce((a, b) => a + b, 0) / n;
                     const variance = arr.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / (n - 1);
@@ -1283,7 +1254,7 @@
 
                     document.getElementById('resSubtitle').innerText = `Sample Standard Deviation (s) [N=${n}]`;
                     document.getElementById('resPrimaryValue').innerText = stdDev.toFixed(4);
-                    document.getElementById('resBreakdown').innerText = `Dataset Mean: ${mean.toFixed(2)} • Variance: ${variance.toFixed(4)} • Sum: ${arr.reduce((a,b)=>a+b, 0)}`;
+                    document.getElementById('resBreakdown').innerText = `Mean: ${mean.toFixed(2)} • Variance: ${variance.toFixed(4)} • Sum: ${arr.reduce((a,b)=>a+b, 0)}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
@@ -1302,26 +1273,23 @@
                 compute: () => {
                     const tVal = document.getElementById('inp_sleep_time').value || "23:00";
                     const [hrs, mins] = tVal.split(':').map(Number);
-                    
                     const sleepDate = new Date();
-                    sleepDate.setHours(hrs, mins + 14, 0); // 14 mins avg to fall asleep
-
+                    sleepDate.setHours(hrs, mins + 14, 0);
                     const formatTime = (d) => d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
                     const c4 = new Date(sleepDate.getTime() + (4 * 90 * 60000));
                     const c5 = new Date(sleepDate.getTime() + (5 * 90 * 60000));
                     const c6 = new Date(sleepDate.getTime() + (6 * 90 * 60000));
 
                     document.getElementById('resSubtitle').innerText = "Optimal Wake Times (Zero Grogginess)";
                     document.getElementById('resPrimaryValue').innerText = formatTime(c5) + " (5 Cycles)";
-                    document.getElementById('resBreakdown').innerText = `Other ideal wake times: ${formatTime(c4)} (6h / 4 cycles) or ${formatTime(c6)} (9h / 6 cycles). Includes 14m falling asleep buffer.`;
+                    document.getElementById('resBreakdown').innerText = `Other wake times: ${formatTime(c4)} (6h / 4 cycles) or ${formatTime(c6)} (9h / 6 cycles). Includes 14m falling asleep buffer.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             age: {
                 category: 'other',
                 heading: 'Exact Chronological Age <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate precise living age down to exact days, hours, and minutes lived.',
+                desc: 'Calculate precise living age down to exact days, hours, and minutes.',
                 renderInputs: () => `
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 mb-1.5">Select Date of Birth</label>
@@ -1349,7 +1317,7 @@
             datediff: {
                 category: 'other',
                 heading: 'Date Difference <span class="gradient-text">Calculator</span>',
-                desc: 'Find the exact span of days, weeks, and months between two calendar dates.',
+                desc: 'Find the exact span of days and weeks between two calendar dates.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1377,7 +1345,7 @@
             gpa: {
                 category: 'other',
                 heading: 'GPA Grade Point <span class="gradient-text">Calculator</span>',
-                desc: 'Calculate college semester GPA based on course credit hours and letter grades.',
+                desc: 'Calculate college semester GPA based on course credits.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         <div>
@@ -1417,14 +1385,14 @@
 
                     document.getElementById('resSubtitle').innerText = "Cumulative Semester GPA";
                     document.getElementById('resPrimaryValue').innerText = gpa.toFixed(2) + " / 4.0";
-                    document.getElementById('resBreakdown').innerText = `Total Completed Credits: ${totalCredits} • Total Grade Points Earned: ${totalPoints.toFixed(1)}`;
+                    document.getElementById('resBreakdown').innerText = `Total Credits: ${totalCredits} • Total Grade Points Earned: ${totalPoints.toFixed(1)}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             subnet: {
                 category: 'other',
                 heading: 'Subnet IPv4 CIDR <span class="gradient-text">Calculator</span>',
-                desc: 'Compute network address, usable host ranges, and broadcast addresses for IP subnets.',
+                desc: 'Compute network address, usable host ranges, and IP capacity.',
                 renderInputs: () => `
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1449,17 +1417,17 @@
 
                     document.getElementById('resSubtitle').innerText = `Subnet Capacity for CIDR /${cidr}`;
                     document.getElementById('resPrimaryValue').innerText = `${totalHosts.toLocaleString()} Usable Hosts`;
-                    document.getElementById('resBreakdown').innerText = `Base Subnet Mask: ${cidr === 24 ? '255.255.255.0' : (cidr === 16 ? '255.255.0.0' : 'Custom Mask')} • IP: ${ip}`;
+                    document.getElementById('resBreakdown').innerText = `Mask: ${cidr === 24 ? '255.255.255.0' : 'Custom Mask'} • Input IP: ${ip}`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             },
             password: {
                 category: 'other',
                 heading: 'Cryptographic Password <span class="gradient-text">Generator</span>',
-                desc: 'Generate ultra-secure, cryptographically strong random passwords locally.',
+                desc: 'Generate ultra-secure random passwords locally.',
                 renderInputs: () => `
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Password Length (Characters)</label>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Password Length</label>
                         <input type="number" id="inp_pwd_len" value="16" min="8" max="64" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:border-purple-500 focus:outline-none">
                     </div>
                 `,
@@ -1471,9 +1439,9 @@
                         pwd += chars.charAt(Math.floor(Math.random() * chars.length));
                     }
 
-                    document.getElementById('resSubtitle').innerText = `Generated Cryptographic Password (${len} chars)`;
+                    document.getElementById('resSubtitle').innerText = `Generated Password (${len} chars)`;
                     document.getElementById('resPrimaryValue').innerText = pwd;
-                    document.getElementById('resBreakdown').innerText = `Entropy Strength: ~${(len * 6.55).toFixed(0)} bits (Very Strong) • Never transmitted online.`;
+                    document.getElementById('resBreakdown').innerText = `Entropy Strength: ~${(len * 6.55).toFixed(0)} bits • Never transmitted online.`;
                     document.getElementById('extraDataContainer').classList.add('hidden');
                 }
             }
@@ -1481,7 +1449,6 @@
 
         let currentActiveTool = 'mortgage';
 
-        // Render subtool pills inside active category
         function renderSubtoolBar(category) {
             const bar = document.getElementById('subtool-bar');
             bar.innerHTML = '';
@@ -1497,7 +1464,6 @@
             }
         }
 
-        // Switch Top Category
         function setCategory(cat) {
             document.querySelectorAll('.tab-btn').forEach(b => {
                 b.classList.remove('tab-active');
@@ -1506,7 +1472,6 @@
             document.getElementById(`cat-${cat}`).classList.add('tab-active');
             document.getElementById(`cat-${cat}`).classList.remove('text-slate-400');
 
-            // Find first tool in category
             for (let key in TOOLS) {
                 if (TOOLS[key].category === cat) {
                     launchTool(key);
@@ -1515,13 +1480,11 @@
             }
         }
 
-        // Launch ANY specific tool directly
         function launchTool(toolKey) {
             if (!TOOLS[toolKey]) return;
             currentActiveTool = toolKey;
             const tool = TOOLS[toolKey];
 
-            // Set Category Tab active
             document.querySelectorAll('.tab-btn').forEach(b => {
                 b.classList.remove('tab-active');
                 b.classList.add('text-slate-400');
@@ -1529,20 +1492,13 @@
             document.getElementById(`cat-${tool.category}`).classList.add('tab-active');
             document.getElementById(`cat-${tool.category}`).classList.remove('text-slate-400');
 
-            // Render subtool pill bar
             renderSubtoolBar(tool.category);
 
-            // Update Headings & Description
             document.getElementById('activeToolHeading').innerHTML = tool.heading;
             document.getElementById('activeToolDesc').innerText = tool.desc;
-
-            // Render Inputs
             document.getElementById('dynamicFormContainer').innerHTML = tool.renderInputs();
 
-            // Run computation immediately
             tool.compute();
-
-            // Smooth scroll to tool box
             document.getElementById('suite-panel').scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -1578,7 +1534,6 @@
             document.getElementById('legalModal').classList.add('hidden');
         }
 
-        // Initialize with default Mortgage tool
         window.addEventListener('DOMContentLoaded', () => {
             launchTool('mortgage');
         });
