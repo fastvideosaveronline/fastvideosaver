@@ -1,352 +1,1034 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" class="scroll-smooth overflow-x-hidden">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mortgage Calculator – Monthly Payment & Amortization | FastFinanceSuite</title>
+<title>Mortgage Calculator – Monthly Payment & Amortization | FastFinanceSuite</title>
 
-  <meta name="description" content="Use our free mortgage calculator to estimate monthly principal and interest payments, total interest, total cost, and an amortization schedule for a fixed-rate home loan.">
+<meta name="description" content="Free mortgage calculator to estimate monthly mortgage payments, total interest and total loan cost for fixed-rate home loans.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="FastFinanceSuite">
 
-  <link rel="canonical" href="https://www.fastvideosaver.online/calculators/mortgage-calculator/">
+<link rel="canonical" href="https://www.fastvideosaver.online/calculators/mortgage-calculator/">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Mortgage Calculator – Monthly Payment & Amortization">
-  <meta property="og:description" content="Calculate monthly mortgage payments, total interest and loan cost with a free fixed-rate mortgage calculator.">
-  <meta property="og:url" content="https://www.fastvideosaver.online/calculators/mortgage-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FastFinanceSuite">
+<meta property="og:title" content="Mortgage Calculator – Monthly Payment & Amortization">
+<meta property="og:description" content="Calculate monthly mortgage payments, total interest and total loan cost with this free mortgage calculator.">
+<meta property="og:url" content="https://www.fastvideosaver.online/calculators/mortgage-calculator/">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mortgage Calculator">
-  <meta name="twitter:description" content="Free mortgage payment and amortization calculator.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mortgage Calculator | FastFinanceSuite">
+<meta name="twitter:description" content="Free mortgage payment and amortization calculator.">
 
-  <meta name="theme-color" content="#8b5cf6">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%238b5cf6'/><path d='M25 50 L42 67 L75 30' stroke='white' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #090d16;
-      color: #f1f5f9;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-    }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      background: #0f172a;
-      color: white;
-      border: 1px solid #475569;
-      outline: none;
-    }
+<style>
 
-    input:focus {
-      border-color: #8b5cf6;
-    }
+* {
+    box-sizing:border-box;
+}
 
-    button {
-      cursor: pointer;
-    }
-  </style>
+body {
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:#090d16;
+    color:#f1f5f9;
+}
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Mortgage Calculator",
-    "url": "https://www.fastvideosaver.online/calculators/mortgage-calculator/",
-    "description": "Free mortgage calculator for estimating monthly payments, total interest and amortization.",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
+.gradient-text {
+    background:linear-gradient(
+        135deg,
+        #a855f7 0%,
+        #ec4899 50%,
+        #f43f5e 100%
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.fastvideosaver.online/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Mortgage Calculator",
-        "item": "https://www.fastvideosaver.online/calculators/mortgage-calculator/"
-      }
-    ]
-  }
-  </script>
+.gradient-btn {
+    background:linear-gradient(
+        135deg,
+        #8b5cf6 0%,
+        #d946ef 100%
+    );
+    transition:all .3s ease;
+}
+
+.gradient-btn:hover {
+    opacity:.92;
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px -5px rgba(217,70,239,.4);
+}
+
+.glass-card {
+    background:rgba(30,41,59,.65);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.input-box {
+    width:100%;
+    background:rgba(15,23,42,.9);
+    border:1px solid #334155;
+    border-radius:12px;
+    padding:13px 14px;
+    color:white;
+    outline:none;
+    transition:.2s;
+}
+
+.input-box:focus {
+    border-color:#8b5cf6;
+    box-shadow:0 0 0 3px rgba(139,92,246,.12);
+}
+
+.result-box {
+    background:rgba(2,6,23,.75);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.tool-card {
+    background:rgba(30,41,59,.65);
+    border:1px solid rgba(255,255,255,.07);
+    transition:.25s;
+}
+
+.tool-card:hover {
+    border-color:rgba(168,85,247,.6);
+    transform:translateY(-2px);
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@graph":[
+   {
+     "@type":"WebApplication",
+     "name":"Mortgage Calculator",
+     "url":"https://www.fastvideosaver.online/calculators/mortgage-calculator/",
+     "description":"Free mortgage calculator for monthly payments, total interest and loan cost.",
+     "applicationCategory":"FinanceApplication",
+     "operatingSystem":"All",
+     "offers":{
+       "@type":"Offer",
+       "price":"0",
+       "priceCurrency":"USD"
+     }
+   },
+   {
+     "@type":"BreadcrumbList",
+     "itemListElement":[
+       {
+         "@type":"ListItem",
+         "position":1,
+         "name":"Home",
+         "item":"https://www.fastvideosaver.online/"
+       },
+       {
+         "@type":"ListItem",
+         "position":2,
+         "name":"Mortgage Calculator",
+         "item":"https://www.fastvideosaver.online/calculators/mortgage-calculator/"
+       }
+     ]
+   }
+ ]
+}
+</script>
+
 </head>
 
-<body>
+<body class="min-h-screen overflow-x-hidden">
 
-<header class="border-b border-slate-800 bg-slate-950">
-  <div class="max-w-5xl mx-auto px-5 py-5">
-    <a href="/" class="text-xl font-bold text-white">
-      FastFinance<span class="text-pink-500">Suite</span>
-    </a>
-  </div>
+<!-- HEADER -->
+
+<header class="sticky top-0 z-50 glass-card border-b border-slate-800/80">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+h-16 sm:h-20 flex items-center justify-between gap-3">
+
+<a href="/" class="flex items-center gap-3">
+
+<div class="w-9 h-9 sm:w-10 sm:h-10
+rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500
+flex items-center justify-center text-white
+shadow-lg shadow-purple-500/30">
+
+<i class="fa-solid fa-calculator text-lg"></i>
+
+</div>
+
+<span class="text-lg sm:text-2xl font-black tracking-tight">
+FastFinance<span class="text-pink-500">Suite</span>
+</span>
+
+</a>
+
+<nav class="hidden md:flex items-center gap-8
+text-sm font-semibold text-slate-300">
+
+<a href="/" class="hover:text-purple-400 transition">
+Calculators
+</a>
+
+<a href="/#directory" class="hover:text-purple-400 transition">
+Directory
+</a>
+
+<a href="/#guide" class="hover:text-purple-400 transition">
+Formulas & Guides
+</a>
+
+<a href="/#faqs" class="hover:text-purple-400 transition">
+FAQs
+</a>
+
+</nav>
+
+<a href="/" class="gradient-btn text-white
+text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-xl">
+
+<i class="fa-solid fa-layer-group mr-1"></i>
+All Tools
+
+</a>
+
+</div>
 </header>
 
-<main class="max-w-5xl mx-auto px-5 py-10">
 
-  <nav class="text-sm text-slate-400 mb-6">
-    <a href="/" class="hover:text-purple-400">Home</a>
-    <span class="mx-2">›</span>
-    <span>Mortgage Calculator</span>
-  </nav>
+<!-- HERO -->
 
-  <section class="mb-8">
-    <h1 class="text-4xl md:text-5xl font-black mb-4">
-      Mortgage <span class="text-purple-400">Calculator</span>
-    </h1>
+<main>
 
-    <p class="text-slate-400 max-w-3xl leading-7">
-      Estimate your monthly mortgage payment, total interest, and total loan cost
-      with this free fixed-rate mortgage calculator.
-    </p>
-  </section>
+<section class="relative pt-12 sm:pt-16 pb-16 px-4 overflow-hidden">
 
-  <section class="card rounded-2xl p-6 md:p-8">
+<div class="absolute top-1/4 left-1/2
+-translate-x-1/2
+w-[350px] sm:w-[700px]
+h-[350px] sm:h-[500px]
+bg-purple-600/20
+blur-[130px]
+rounded-full
+pointer-events-none">
+</div>
 
-    <div class="grid md:grid-cols-2 gap-5">
+<div class="max-w-6xl mx-auto relative z-10">
 
-      <div>
-        <label class="block text-sm font-semibold mb-2">
-          Home Price ($)
-        </label>
-        <input id="price" type="number" value="400000" min="0">
-      </div>
+<!-- Breadcrumb -->
 
-      <div>
-        <label class="block text-sm font-semibold mb-2">
-          Down Payment ($)
-        </label>
-        <input id="down" type="number" value="80000" min="0">
-      </div>
+<div class="text-xs sm:text-sm text-slate-500 mb-6">
 
-      <div>
-        <label class="block text-sm font-semibold mb-2">
-          Interest Rate (%)
-        </label>
-        <input id="rate" type="number" value="6.5" step="0.01" min="0">
-      </div>
+<a href="/" class="hover:text-purple-400">
+Home
+</a>
 
-      <div>
-        <label class="block text-sm font-semibold mb-2">
-          Loan Term (Years)
-        </label>
-        <input id="years" type="number" value="30" min="1" max="50">
-      </div>
+<span class="mx-2">›</span>
 
-    </div>
+<span class="text-slate-300">
+Mortgage Calculator
+</span>
 
-    <button
-      onclick="calculateMortgage()"
-      class="w-full mt-6 py-4 rounded-xl bg-purple-600 hover:bg-purple-500 font-bold text-white">
-      Calculate Mortgage
-    </button>
+</div>
 
-    <div id="result" class="mt-7 hidden">
 
-      <div class="grid md:grid-cols-3 gap-4">
+<!-- Heading -->
 
-        <div class="bg-slate-900 rounded-xl p-5">
-          <div class="text-sm text-slate-400">Monthly Payment</div>
-          <div id="monthly" class="text-2xl font-black mt-2"></div>
-        </div>
+<div class="text-center mb-10">
 
-        <div class="bg-slate-900 rounded-xl p-5">
-          <div class="text-sm text-slate-400">Total Interest</div>
-          <div id="interest" class="text-2xl font-black mt-2"></div>
-        </div>
+<div class="inline-flex items-center gap-2
+px-4 py-1.5 rounded-full
+bg-purple-500/10
+border border-purple-500/20
+text-purple-300 text-xs sm:text-sm
+font-medium mb-6">
 
-        <div class="bg-slate-900 rounded-xl p-5">
-          <div class="text-sm text-slate-400">Total Loan Cost</div>
-          <div id="total" class="text-2xl font-black mt-2"></div>
-        </div>
+<span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
 
-      </div>
+Free Mortgage Calculator
 
-    </div>
+</div>
 
-  </section>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl
+font-black tracking-tight leading-tight">
 
-  <section class="mt-12 prose prose-invert max-w-none">
+Mortgage
+<span class="gradient-text">
+Calculator
+</span>
 
-    <h2>How does a mortgage calculator work?</h2>
+</h1>
 
-    <p>
-      A mortgage calculator estimates the monthly principal and interest payment
-      for a fixed-rate home loan. You enter the home price, down payment,
-      interest rate, and loan term, and the calculator estimates the payment
-      required to repay the loan over the selected term.
-    </p>
+<p class="text-slate-400 text-sm sm:text-base
+max-w-3xl mx-auto mt-4 leading-7">
 
-    <h2>Mortgage payment formula</h2>
+Estimate monthly mortgage payments, total interest,
+and total loan cost for a fixed-rate home loan.
 
-    <p>
-      The standard fixed-rate mortgage payment formula is:
-    </p>
+</p>
 
-    <p>
-      <strong>M = P × [r(1+r)<sup>n</sup>] / [(1+r)<sup>n</sup> − 1]</strong>
-    </p>
+</div>
 
-    <p>
-      P represents the loan principal, r represents the monthly interest rate,
-      and n represents the total number of monthly payments.
-    </p>
 
-    <h2>What is included in a mortgage payment?</h2>
+<!-- CALCULATOR -->
 
-    <p>
-      A basic mortgage calculation estimates principal and interest. Actual
-      housing costs can also include property taxes, homeowners insurance,
-      mortgage insurance, HOA fees, and other expenses.
-    </p>
+<div class="glass-card rounded-3xl
+p-5 sm:p-8 lg:p-10
+shadow-2xl shadow-purple-950/40">
 
-    <h2>Frequently Asked Questions</h2>
+<div class="grid lg:grid-cols-2 gap-8">
 
-    <h3>How much will my monthly mortgage payment be?</h3>
 
-    <p>
-      Your monthly payment depends mainly on the loan amount, interest rate,
-      and repayment term. Enter your numbers above to calculate an estimate.
-    </p>
+<!-- INPUTS -->
 
-    <h3>Does the down payment affect the mortgage payment?</h3>
+<div>
 
-    <p>
-      Yes. A larger down payment reduces the amount borrowed, which generally
-      reduces the principal and interest payment.
-    </p>
+<h2 class="text-xl sm:text-2xl
+font-black mb-6">
 
-    <h3>Does this calculator include property taxes and insurance?</h3>
+Mortgage Details
 
-    <p>
-      No. This basic calculator estimates principal and interest. Taxes,
-      insurance, mortgage insurance, and other housing costs may need to be
-      added separately.
-    </p>
+</h2>
 
-  </section>
+<div class="grid sm:grid-cols-2 gap-5">
 
-  <section class="mt-12 border-t border-slate-800 pt-8">
 
-    <h2 class="text-2xl font-bold mb-5">
-      More Free Calculators
-    </h2>
+<div>
 
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+<label class="block text-xs font-bold
+text-slate-300 mb-2">
 
-      <a href="/"
-         class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700">
-        All Calculators
-      </a>
+Home Price ($)
 
-      <a href="/calculators/auto-loan-calculator/"
-         class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700">
-        Auto Loan Calculator
-      </a>
+</label>
 
-      <a href="/calculators/bmi-calculator/"
-         class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700">
-        BMI Calculator
-      </a>
+<input
+id="homePrice"
+class="input-box"
+type="number"
+value="400000"
+min="0"
+step="1000">
 
-      <a href="/calculators/tdee-calculator/"
-         class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700">
-        TDEE Calculator
-      </a>
+</div>
 
-      <a href="/calculators/gpa-calculator/"
-         class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700">
-        GPA Calculator
-      </a>
 
-    </div>
+<div>
 
-  </section>
+<label class="block text-xs font-bold
+text-slate-300 mb-2">
+
+Down Payment ($)
+
+</label>
+
+<input
+id="downPayment"
+class="input-box"
+type="number"
+value="80000"
+min="0"
+step="1000">
+
+</div>
+
+
+<div>
+
+<label class="block text-xs font-bold
+text-slate-300 mb-2">
+
+Interest Rate (%)
+
+</label>
+
+<input
+id="interestRate"
+class="input-box"
+type="number"
+value="6.5"
+min="0"
+step="0.01">
+
+</div>
+
+
+<div>
+
+<label class="block text-xs font-bold
+text-slate-300 mb-2">
+
+Loan Term (Years)
+
+</label>
+
+<input
+id="loanYears"
+class="input-box"
+type="number"
+value="30"
+min="1"
+max="50">
+
+</div>
+
+</div>
+
+
+<button
+onclick="calculateMortgage()"
+class="gradient-btn w-full
+mt-7 py-4 rounded-xl
+text-white font-bold text-sm
+flex items-center justify-center gap-2">
+
+<i class="fa-solid fa-calculator"></i>
+
+Calculate Mortgage
+
+</button>
+
+<p id="error"
+class="hidden text-red-400 text-xs mt-3">
+</p>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div class="result-box rounded-2xl p-6">
+
+<span class="text-xs font-bold
+text-purple-400 uppercase
+tracking-wider">
+
+Calculation Result
+
+</span>
+
+
+<h3 class="text-slate-400
+text-sm mt-5">
+
+Estimated Monthly Payment
+
+</h3>
+
+<div id="monthlyPayment"
+class="text-4xl sm:text-5xl
+font-black text-white mt-1">
+
+$0.00
+
+</div>
+
+
+<div class="grid grid-cols-2 gap-4 mt-7">
+
+<div class="bg-slate-800/60
+rounded-xl p-4">
+
+<div class="text-xs text-slate-400">
+Total Interest
+</div>
+
+<div id="totalInterest"
+class="text-xl font-black mt-2">
+$0.00
+</div>
+
+</div>
+
+
+<div class="bg-slate-800/60
+rounded-xl p-4">
+
+<div class="text-xs text-slate-400">
+Total Loan Cost
+</div>
+
+<div id="totalCost"
+class="text-xl font-black mt-2">
+$0.00
+</div>
+
+</div>
+
+</div>
+
+
+<div class="mt-5 pt-5
+border-t border-slate-800">
+
+<div class="flex justify-between
+text-xs text-slate-400">
+
+<span>
+Loan Amount
+</span>
+
+<strong id="loanAmount"
+class="text-white">
+$0.00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SCHEDULE -->
+
+<div id="scheduleArea"
+class="hidden mt-8 pt-7
+border-t border-slate-800">
+
+<div class="flex justify-between
+items-center mb-4">
+
+<h3 class="font-bold text-lg">
+Amortization Preview
+</h3>
+
+<span class="text-xs text-slate-500">
+First 12 payments
+</span>
+
+</div>
+
+<div class="overflow-x-auto
+rounded-xl border border-slate-800">
+
+<table class="w-full text-xs">
+
+<thead class="bg-slate-950 text-slate-400">
+
+<tr>
+
+<th class="p-3 text-left">
+Month
+</th>
+
+<th class="p-3 text-right">
+Payment
+</th>
+
+<th class="p-3 text-right">
+Principal
+</th>
+
+<th class="p-3 text-right">
+Interest
+</th>
+
+<th class="p-3 text-right">
+Balance
+</th>
+
+</tr>
+
+</thead>
+
+<tbody
+id="scheduleBody"
+class="divide-y divide-slate-800
+bg-slate-900/50">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SEO CONTENT -->
+
+<section class="px-4 pb-16">
+
+<div class="max-w-6xl mx-auto
+grid lg:grid-cols-[1fr_330px] gap-8">
+
+
+<article class="glass-card
+rounded-2xl p-6 sm:p-8">
+
+<h2 class="text-2xl sm:text-3xl
+font-black mb-4">
+
+How Does a Mortgage Calculator Work?
+
+</h2>
+
+<p class="text-slate-400
+leading-7 mb-7">
+
+A mortgage calculator estimates the monthly
+principal and interest payment on a fixed-rate
+home loan. Enter the home price, down payment,
+interest rate, and loan term to estimate your
+monthly payment and total interest.
+
+</p>
+
+
+<h2 class="text-2xl font-black mb-4">
+
+Mortgage Payment Formula
+
+</h2>
+
+<div class="bg-slate-950
+border border-slate-800
+rounded-xl p-5 text-center
+text-lg sm:text-xl
+font-bold mb-6">
+
+M = P × [r(1+r)<sup>n</sup>]
+÷ [(1+r)<sup>n</sup> − 1]
+
+</div>
+
+<p class="text-slate-400 leading-7">
+
+P represents the loan principal,
+r represents the monthly interest rate,
+and n represents the total number
+of monthly payments.
+
+</p>
+
+
+<h2 class="text-2xl font-black
+mt-9 mb-4">
+
+What Does a Mortgage Payment Include?
+
+</h2>
+
+<p class="text-slate-400 leading-7">
+
+The basic mortgage calculation estimates
+principal and interest. Your actual housing
+payment may also include property taxes,
+homeowners insurance, mortgage insurance,
+HOA fees, and other costs.
+
+</p>
+
+
+<h2 class="text-2xl font-black
+mt-9 mb-5">
+
+Frequently Asked Questions
+
+</h2>
+
+
+<div class="space-y-6">
+
+
+<div>
+
+<h3 class="font-bold text-white">
+Does a larger down payment lower my payment?
+</h3>
+
+<p class="text-slate-400 text-sm
+leading-6 mt-2">
+
+Yes. A larger down payment reduces
+the amount borrowed, which generally
+reduces the principal and interest payment.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3 class="font-bold text-white">
+Does this calculator include taxes and insurance?
+</h3>
+
+<p class="text-slate-400 text-sm
+leading-6 mt-2">
+
+No. This calculator focuses on
+principal and interest. Property taxes,
+insurance, mortgage insurance and
+other housing expenses are separate.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3 class="font-bold text-white">
+Can I use this calculator for different loan terms?
+</h3>
+
+<p class="text-slate-400 text-sm
+leading-6 mt-2">
+
+Yes. You can enter different loan terms
+to compare how the repayment period
+affects the estimated monthly payment
+and total interest.
+
+</p>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- SIDEBAR -->
+
+<aside class="glass-card
+rounded-2xl p-6 h-fit">
+
+<h2 class="text-xl font-black mb-5">
+
+More Free Calculators
+
+</h2>
+
+
+<div class="space-y-3">
+
+
+<a href="/"
+class="tool-card block rounded-xl p-4">
+
+<div class="font-bold">
+All Calculators
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Browse the complete calculator suite
+</div>
+
+</a>
+
+
+<a href="/?tool=autoloan"
+class="tool-card block rounded-xl p-4">
+
+<div class="font-bold">
+Auto Loan Calculator
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Estimate vehicle loan payments
+</div>
+
+</a>
+
+
+<a href="/?tool=bmi"
+class="tool-card block rounded-xl p-4">
+
+<div class="font-bold">
+BMI Calculator
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Calculate BMI
+</div>
+
+</a>
+
+
+<a href="/?tool=calorie"
+class="tool-card block rounded-xl p-4">
+
+<div class="font-bold">
+Calorie Calculator
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Estimate daily calorie needs
+</div>
+
+</a>
+
+
+<a href="/?tool=gpa"
+class="tool-card block rounded-xl p-4">
+
+<div class="font-bold">
+GPA Calculator
+</div>
+
+<div class="text-xs text-slate-500 mt-1">
+Calculate GPA
+</div>
+
+</a>
+
+
+</div>
+
+</aside>
+
+</div>
+
+</section>
 
 </main>
 
-<footer class="border-t border-slate-800 mt-12 py-8 text-center text-sm text-slate-500">
-  © 2026 FastFinanceSuite. Free online calculators.
+
+<footer class="border-t
+border-slate-800
+bg-slate-950/60">
+
+<div class="max-w-7xl mx-auto
+px-4 py-8
+text-center text-xs
+text-slate-500">
+
+© 2026 FastFinanceSuite
+· Free Online Calculators
+
+</div>
+
 </footer>
 
+
 <script>
-function calculateMortgage() {
 
-  const price = Number(document.getElementById("price").value);
-  const down = Number(document.getElementById("down").value);
-  const annualRate = Number(document.getElementById("rate").value);
-  const years = Number(document.getElementById("years").value);
+function formatMoney(value) {
 
-  const principal = price - down;
-  const months = years * 12;
-  const monthlyRate = annualRate / 100 / 12;
+return value.toLocaleString(
+'en-US',
+{
+style:'currency',
+currency:'USD',
+maximumFractionDigits:2
+}
+);
 
-  if (
-    !Number.isFinite(principal) ||
-    principal <= 0 ||
-    !Number.isFinite(years) ||
-    years <= 0 ||
-    !Number.isFinite(annualRate) ||
-    annualRate < 0
-  ) {
-    alert("Please enter valid mortgage values.");
-    return;
-  }
-
-  let monthlyPayment;
-
-  if (monthlyRate === 0) {
-    monthlyPayment = principal / months;
-  } else {
-    monthlyPayment =
-      principal *
-      (
-        monthlyRate *
-        Math.pow(1 + monthlyRate, months)
-      ) /
-      (
-        Math.pow(1 + monthlyRate, months) - 1
-      );
-  }
-
-  const totalPaid = monthlyPayment * months;
-  const totalInterest = totalPaid - principal;
-
-  const money = value =>
-    value.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD"
-    });
-
-  document.getElementById("monthly").textContent = money(monthlyPayment);
-  document.getElementById("interest").textContent = money(totalInterest);
-  document.getElementById("total").textContent = money(totalPaid);
-
-  document.getElementById("result").classList.remove("hidden");
 }
 
+
+function calculateMortgage() {
+
+const price =
+Number(document.getElementById('homePrice').value);
+
+const down =
+Number(document.getElementById('downPayment').value);
+
+const annualRate =
+Number(document.getElementById('interestRate').value);
+
+const years =
+Number(document.getElementById('loanYears').value);
+
+const error =
+document.getElementById('error');
+
+
+if (
+!Number.isFinite(price) ||
+price <= 0 ||
+!Number.isFinite(down) ||
+down < 0 ||
+down >= price ||
+!Number.isFinite(annualRate) ||
+annualRate < 0 ||
+!Number.isFinite(years) ||
+years <= 0
+) {
+
+error.textContent =
+'Please enter valid values. Down payment must be less than home price.';
+
+error.classList.remove('hidden');
+
+return;
+
+}
+
+
+error.classList.add('hidden');
+
+
+const principal =
+price - down;
+
+const months =
+Math.round(years * 12);
+
+const monthlyRate =
+annualRate / 100 / 12;
+
+
+let payment;
+
+
+if (monthlyRate === 0) {
+
+payment =
+principal / months;
+
+} else {
+
+payment =
+principal *
+(
+monthlyRate *
+Math.pow(
+1 + monthlyRate,
+months
+)
+) /
+(
+Math.pow(
+1 + monthlyRate,
+months
+) - 1
+);
+
+}
+
+
+const totalCost =
+payment * months;
+
+const totalInterest =
+totalCost - principal;
+
+
+document.getElementById(
+'monthlyPayment'
+).textContent =
+formatMoney(payment);
+
+
+document.getElementById(
+'totalInterest'
+).textContent =
+formatMoney(totalInterest);
+
+
+document.getElementById(
+'totalCost'
+).textContent =
+formatMoney(totalCost);
+
+
+document.getElementById(
+'loanAmount'
+).textContent =
+formatMoney(principal);
+
+
+/* Amortization Preview */
+
+const tbody =
+document.getElementById('scheduleBody');
+
+tbody.innerHTML = '';
+
+let balance =
+principal;
+
+
+for (
+let month = 1;
+month <= Math.min(12, months);
+month++
+) {
+
+const interestPart =
+balance * monthlyRate;
+
+const principalPart =
+Math.min(
+payment - interestPart,
+balance
+);
+
+balance =
+Math.max(
+0,
+balance - principalPart
+);
+
+
+const row =
+document.createElement('tr');
+
+
+row.innerHTML = `
+
+<td class="p-3 text-slate-300">
+${month}
+</td>
+
+<td class="p-3 text-right">
+${formatMoney(payment)}
+</td>
+
+<td class="p-3 text-right">
+${formatMoney(principalPart)}
+</td>
+
+<td class="p-3 text-right">
+${formatMoney(interestPart)}
+</td>
+
+<td class="p-3 text-right">
+${formatMoney(balance)}
+</td>
+
+`;
+
+
+tbody.appendChild(row);
+
+}
+
+
+document.getElementById(
+'scheduleArea'
+).classList.remove('hidden');
+
+}
+
+
 calculateMortgage();
+
 </script>
 
 </body>
